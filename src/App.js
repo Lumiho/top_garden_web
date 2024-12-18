@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+import logo from './Media/SHUBA.gif';
 import './App.css';
+import './Components/Header_Footer.css'
 
 function Header() {
   return (
@@ -16,7 +17,7 @@ function Header() {
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="/subpage/reviews.html">Reviews</a></li>
+          <li><a href="/subpage/reviews.js">Reviews</a></li>
         </ul>
       </nav>
     </header>
@@ -26,7 +27,7 @@ function Header() {
 function MainContent() {
   return (
     <main>
-      <p>beep</p>
+      <p>What</p>
     </main>
   );
 }
@@ -42,8 +43,6 @@ function Footer() {
     </footer>
   );
 }
-
-export default App;
 
 function App() {
   return (
@@ -61,9 +60,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          What am I doing
         </a>
       </header>
+
+      <body>
+        <MainContent />
+      </body>
 
 
       <Footer />
@@ -72,3 +75,4 @@ function App() {
 }
 
 
+export default App;
