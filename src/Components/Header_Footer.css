@@ -2,7 +2,7 @@
 
 header {
   background-color: #4CAF50;
-  color: white;
+  color: #F4F1DE;
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: white;
+  color: #F4F1DE;
   text-decoration: none;
   font-size: 18px;
 }
@@ -36,7 +36,7 @@ header nav ul li a:hover {
 
 /* Footer styles */
 footer {
-  background-color: #333;
+  background-color: #4CAF50;
   color: white;
   text-align: center;
   padding: 20px;
