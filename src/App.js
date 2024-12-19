@@ -5,6 +5,7 @@ import Reviews from './pages/Reviews';
 import Portfolio from './pages/Portfolio';
 import GetQuote from './pages/GetQuote';
 import "./index.css";
+import topGardenLogo from './Media/top_garden.png';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <div className="bg-[#4A7A63] text-[#F4F1DE] py-4">
           <header className="container mx-auto flex justify-between items-center">
             <div>
-              <img src="Media/top_garden.png" alt="Top Garden Logo" />
+              <img src={topGardenLogo} alt="Top Garden Logo" className="size-20" />
             </div>
             <div className="text-3xl font-bold text-[#E07A5F]">
               <h1>Top Garden</h1>
