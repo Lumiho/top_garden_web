@@ -1,6 +1,7 @@
-import logo from './Media/SHUBA.gif';
+import logo from './Media/top_garden.png';
 import './App.css';
 import './Components/Header_Footer.css'
+import './Components/Portfolio.css'
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
         </header>
       </div>
 
-      <div>
+      <div className='Portfolio'>
         <main>
-          <p>What</p>
+          <p>Helloooo</p>
           <div>
             <img src={logo} className="App-logo" alt="logo" />
           </div>

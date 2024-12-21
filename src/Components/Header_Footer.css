@@ -36,7 +36,7 @@ header nav ul li a:hover {
 
 /* Footer styles */
 footer {
-  background-color: #4CAF50;
+  background-color: #282319f3;
   color: white;
   text-align: center;
   padding: 20px;
@@ -62,4 +62,8 @@ footer ul li a {
 
 footer ul li a:hover {
   text-decoration: underline;
+}
+
+body {
+  background-color: #F4F1DE;
 }
