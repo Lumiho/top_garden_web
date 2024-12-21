@@ -1,23 +1,25 @@
 import React from 'react';
-
+import '../Components/Portfolio.css'
+import landscapingImage from '../Media/irrigationImg.png' // just testings
+import pruningImage from '../Media/pruning.jpeg'
 const projects = [
   {
     id: 1,
     category: 'Landscaping',
     description: 'Beautiful landscaping projects to transform your outdoor spaces.',
-    image: 'https://via.placeholder.com/300x200', // Replace with actual images
+    image: pruningImage, // Replace with actual images
   },
   {
     id: 2,
     category: 'Irrigation',
     description: 'Efficient irrigation systems for healthy gardens.',
-    image: 'https://via.placeholder.com/300x200', // Replace with actual images
+    image: landscapingImage, // Replace with actual images
   },
   {
     id: 3,
     category: 'Design',
     description: 'Creative garden designs tailored to your preferences.',
-    image: 'https://via.placeholder.com/300x200', // Replace with actual images
+    image: pruningImage, // Replace with actual images
   },
   {
     id: 4,

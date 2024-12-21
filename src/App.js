@@ -30,6 +30,7 @@ function App() {
             </nav>
           </header>
         </div>
+        <Portfolio />
 
         {/* Routes */}
         <Routes>
