@@ -5,7 +5,7 @@ import Reviews from './pages/Reviews';
 import Portfolio from './pages/Portfolio';
 import GetQuote from './pages/GetQuote';
 import "./index.css";
-import topGardenLogo from './Media/top_garden.png';
+import topGardenLogo from './Media/SHUBA.gif';
 
 function App() {
   return (
@@ -30,7 +30,6 @@ function App() {
             </nav>
           </header>
         </div>
-        <Portfolio />
 
         {/* Routes */}
         <Routes>

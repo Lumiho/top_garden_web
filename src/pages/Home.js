@@ -13,6 +13,7 @@ function Home() {
         <p className="text-lg text-[#4A7A63] mt-4">
           At Top Garden, we specialize in creating stunning outdoor spaces. From landscaping to irrigation, our team brings your vision to life.
         </p>
+        <p className='text-lg text-[#4A7A63] mt-4'>Will add a bit more information about the company and a learn more link perhaps.</p>
       </section>
 
       <section className="bg-[#4A7A63] text-[#F4F1DE] py-10">
