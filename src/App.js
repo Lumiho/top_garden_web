@@ -1,52 +1,55 @@
-import logo from './Media/top_garden.png';
-import './App.css';
-import './Components/Header_Footer.css'
-import './Components/Portfolio.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Reviews from './pages/Reviews';
+import Portfolio from './pages/Portfolio';
+import GetQuote from './pages/GetQuote';
+import "./index.css";
+import topGardenLogo from './Media/top_garden.png';
 
 function App() {
   return (
-    <div className="App">
-      <div className='Header'>
-        <header>
-          <div>
-            <img src="media/top_garden2_crop.png" alt="Top Garden Logo" />
-          </div>
-          <div className="logo">
-            <h1>Top Garden</h1>
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="/subpage/reviews.js">Reviews</a></li>
-            </ul>
-          </nav>
-        </header>
-      </div>
+    <Router>
+      <div className="App">
+        {/* Header with Navbar */}
+        <div className="bg-[#4A7A63] text-[#F4F1DE] py-4">
+          <header className="container mx-auto flex justify-between items-center">
+            <div>
+              <img src={topGardenLogo} alt="Top Garden Logo" className="size-20" />
+            </div>
+            <div className="text-3xl font-bold text-[#E07A5F]">
+              <h1>Top Garden</h1>
+            </div>
+            <nav>
+              <ul className="flex space-x-6">
+                <li><Link to="/" className="hover:underline text-[#F4F1DE]">Home</Link></li>
+                <li><Link to="/portfolio" className="hover:underline text-[#F4F1DE]">Portfolio</Link></li>
+                <li><Link to="/Reviews" className="hover:underline text-[#F4F1DE]">Reviews</Link></li>
+                <li><Link to="/get-quote" className="hover:underline text-[#F4F1DE]">Get a Quote</Link></li>
+              </ul>
+            </nav>
+          </header>
+        </div>
 
-      <div className='Portfolio'>
-        <main>
-          <p>Helloooo</p>
-          <div>
-            <img src={logo} className="App-logo" alt="logo" />
-          </div>
-        </main>
-      </div>
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/get-quote" element={<GetQuote />} />
+        </Routes>
 
-      <div className='Footer'>
-        <footer>
+        {/* Footer */}
+        <footer className="bg-[#E07A5F] text-[#F4F1DE] text-center py-6">
           <p>&copy; 2024 Top Garden Website. All rights reserved.</p>
-          <ul>
-            <li><a href="#privacy">Privacy Policy</a></li>
-            <li><a href="#terms">Terms of Service</a></li>
+          <ul className="flex justify-center space-x-6 mt-4">
+            <li><a href="#privacy" className="hover:underline text-[#F4F1DE]">Privacy Policy</a></li>
+            <li><a href="#terms" className="hover:underline text-[#F4F1DE]">Terms of Service</a></li>
           </ul>
         </footer>
       </div>
-    </div>
+    </Router>
   );
 }
-
 
 export default App;
