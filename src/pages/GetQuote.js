@@ -57,7 +57,7 @@ function GetQuote() {
       {/* Screen 1: Project Type */}
       {currentScreen === 1 && (
         <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-2xl w-full min-h-[60vh] min-w-[50vw]">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center" style={{ textShadow: '1.5px 1.5px 0px #4A7A63' }}>
             Select Project Type
           </h2>
           <div className="grid grid-cols-2 gap-6">

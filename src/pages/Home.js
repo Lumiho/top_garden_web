@@ -6,7 +6,7 @@ function Home() {
       <section
         className="bg-cover bg-center bg-no-repeat text-[#F4F1DE] h-[70vh] flex flex-col justify-center text-center"
         style={{
-          backgroundImage: `url(${exampleImg})`
+          textShadow: '1px 1px 0px black', backgroundImage: `url(${exampleImg})`
         }}
       >
 
@@ -15,7 +15,7 @@ function Home() {
       </section>
 
       <section className="bg-[#F4F1DE] text-center py-10">
-        <h2 className="text-2xl font-bold text-[#4A7A63]">About Us</h2>
+        <h2 className="text-2xl font-bold text-[#4A7A63]" style={{ textShadow: '.1px .1px 0px black' }}>About Us</h2>
         <p className="text-lg text-[#4A7A63] mt-4">
           At Top Garden, we specialize in creating stunning outdoor spaces. From landscaping to irrigation, our team brings your vision to life.
         </p>
@@ -23,7 +23,7 @@ function Home() {
       </section>
 
       <section className="bg-[#4A7A63] text-[#F4F1DE] py-10">
-        <h2 className="text-2xl font-bold text-center mb-6 text-[#E07A5F]">Contact Us</h2>
+        <h2 className="text-2xl font-bold text-center mb-6 text-[#E07A5F] " style={{ textShadow: '1px 1px 0px black' }}>Contact Us</h2>
         <p className="text-center mb-8">Let us help you transform your outdoor spaces!</p>
         <form className="max-w-md mx-auto space-y-4">
           <input
@@ -43,7 +43,7 @@ function Home() {
           />
           <button
             type="submit"
-            className="w-full bg-[#E07A5F] text-[#F4F1DE] py-2 rounded hover:bg-[#d46653]"
+            className="w-full bg-[#E07A5F] text-[#F4F1DE] py-2 rounded hover:bg-[#d46653]" style={{ textShadow: '.5px .5px 0px black' }}
           >
             Send Message
           </button>

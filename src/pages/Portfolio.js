@@ -32,7 +32,7 @@ const projects = [
 function Portfolio() {
   return (
     <div className="bg-[#F4F1DE] py-10">
-      <h1 className="text-3xl font-bold text-center text-[#4A7A63]">Our Portfolio</h1>
+      <h1 className="text-3xl font-bold text-center text-[#4A7A63]" style={{ textShadow: '.1px .1px 0px black' }}>Our Portfolio</h1>
       <p className="text-center text-lg text-[#4A7A63] mt-4">
         Browse through our completed projects and services we proudly offer.
       </p>
