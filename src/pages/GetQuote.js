@@ -29,11 +29,10 @@ function GetQuote() {
                 onClick={() =>
                   setFormData({ ...formData, projectType: type })
                 }
-                className={`p-4 border rounded-lg cursor-pointer ${
-                  formData.projectType === type
+                className={`p-4 border rounded-lg cursor-pointer ${formData.projectType === type
                     ? 'border-[#E07A5F]'
                     : 'border-gray-300'
-                }`}
+                  }`}
               >
                 <h3 className="font-bold text-[#4A7A63]">{type}</h3>
               </div>
@@ -52,7 +51,7 @@ function GetQuote() {
       {currentScreen === 2 && (
         <div className="p-6 bg-white rounded-lg shadow-md max-w-lg w-full">
           <h2 className="text-2xl font-bold text-[#4A7A63] mb-4">Project Details</h2>
-          
+
           {/* Project Name */}
           <input
             type="text"

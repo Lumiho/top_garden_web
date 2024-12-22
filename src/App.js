@@ -5,7 +5,7 @@ import Reviews from './pages/Reviews';
 import Portfolio from './pages/Portfolio';
 import GetQuote from './pages/GetQuote';
 import "./index.css";
-import topGardenLogo from './Media/SHUBA.gif';
+import topGardenLogo from './Media/top_garden2_crop.png';
 
 function App() {
   return (
@@ -15,17 +15,18 @@ function App() {
         <div className="bg-[#4A7A63] text-[#F4F1DE] py-4">
           <header className="container mx-auto flex justify-between items-center">
             <div>
-              <img src={topGardenLogo} alt="Top Garden Logo" className="size-20" />
+              <img src={topGardenLogo} alt="Top Garden Logo" className="size-20 w-[8.5rem] h-auto" />
             </div>
-            <div className="text-3xl font-bold text-[#E07A5F]">
+            <div className="text-5xl font-bold text-[#E07A5F]"
+              style={{ textShadow: '1px 1px 0px black' }}>
               <h1>Top Garden</h1>
             </div>
             <nav>
               <ul className="flex space-x-6">
-                <li><Link to="/" className="hover:underline text-[#F4F1DE]">Home</Link></li>
-                <li><Link to="/portfolio" className="hover:underline text-[#F4F1DE]">Portfolio</Link></li>
-                <li><Link to="/Reviews" className="hover:underline text-[#F4F1DE]">Reviews</Link></li>
-                <li><Link to="/get-quote" className="hover:underline text-[#F4F1DE]">Get a Quote</Link></li>
+                <li><Link to="/" className="hover:underline text-[#F4F1DE] text-xl">Home</Link></li>
+                <li><Link to="/portfolio" className="hover:underline text-[#F4F1DE] text-xl">Portfolio</Link></li>
+                <li><Link to="/Reviews" className="hover:underline text-[#F4F1DE] text-xl">Reviews</Link></li>
+                <li><Link to="/get-quote" className="hover:underline text-[#F4F1DE] text-xl">Get a Quote</Link></li>
               </ul>
             </nav>
           </header>
