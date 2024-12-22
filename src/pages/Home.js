@@ -1,9 +1,15 @@
 import React from 'react';
-
+import exampleImg from '../Media/irrigationImg.png'
 function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <section className="bg-[#4A7A63] text-[#F4F1DE] h-[80vh] flex flex-col items-center justify-center text-center">
+      <section
+        className="bg-cover bg-center bg-no-repeat text-[#F4F1DE] h-[70vh] flex flex-col justify-center text-center"
+        style={{
+          backgroundImage: `url(${exampleImg})`
+        }}
+      >
+
         <h1 className="text-7xl md:text-8xl font-bold">Welcome to Top Garden</h1>
         <p className="mt-4 text-xl md:text-2xl">Turning your outdoor spaces into dreamscapes.</p>
       </section>
