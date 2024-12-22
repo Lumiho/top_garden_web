@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="App">
         {/* Header with Navbar */}
-        <div className="bg-[#4A7A63]  text-[#F4F1DE] py-4 bg-gradient-to-r from-[#5E9F72] to-[#4A7A63]
+        <div className="bg-[#4A7A63]  text-[#F4F1DE] py-4 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63]
 ">
           <header className="container mx-auto flex justify-between items-center">
             <div>
