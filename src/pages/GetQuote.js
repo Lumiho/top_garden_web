@@ -1,46 +1,98 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import try1 from '../Media/try1.jpg'
+import irrigationImg from '../Media/irrigationImg.png'
 
 function GetQuote() {
   const [currentScreen, setCurrentScreen] = useState(1);
   const [formData, setFormData] = useState({
-    projectType: '',
+    projectType: "",
     projectDetails: {
-      name: '',
-      squareFootage: '',
-      completionDate: '',
-      materials: '',
-      budget: '',
+      name: "",
+      squareFootage: "",
+      completionDate: "",
+      materials: "",
+      budget: "",
+    },
+    userDetails: {
+      fullName: "",
+      email: "",
     },
   });
 
   const handleNext = () => setCurrentScreen((prev) => prev + 1);
   const handleBack = () => setCurrentScreen((prev) => prev - 1);
 
+  const projectTypes = [
+    { name: "Landscaping", image: `url(${irrigationImg})` },
+    { name: "Irrigation", image: `url(${irrigationImg})` },
+    { name: "Design", image: `url(${irrigationImg})` },
+    { name: "Maintenance", image: `url(${irrigationImg})` },
+  ];
+
+  const handleExportPDF = () => {
+    const quoteData = `
+      Project Type: ${formData.projectType}
+      Project Name: ${formData.projectDetails.name}
+      Square Footage: ${formData.projectDetails.squareFootage}
+      Completion Date: ${formData.projectDetails.completionDate}
+      Materials: ${formData.projectDetails.materials}
+      Budget: ${formData.projectDetails.budget}
+      Full Name: ${formData.userDetails.fullName}
+      Email: ${formData.userDetails.email}
+    `;
+    const blob = new Blob([quoteData], { type: "application/pdf" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "quote.pdf";
+    link.click();
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F4F1DE]">
+    <div
+    className="min-h-screen flex items-center justify-center bg-cover bg-center"
+    style={{
+      backgroundImage: `url(${try1})`,
+    }}
+    >
       {/* Screen 1: Project Type */}
       {currentScreen === 1 && (
-        <div className="p-6 bg-white rounded-lg shadow-md max-w-lg w-full">
-          <h2 className="text-2xl font-bold text-[#4A7A63] mb-4">Select Project Type</h2>
-          <div className="grid grid-cols-1 gap-4">
-            {['Landscaping', 'Irrigation', 'Design', 'Maintenance'].map((type) => (
+        <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-2xl w-full min-h-[60vh] min-w-[50vw]">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+            Select Project Type
+          </h2>
+          <div className="grid grid-cols-2 gap-6">
+            {projectTypes.map((type) => (
               <div
-                key={type}
+                key={type.name}
                 onClick={() =>
-                  setFormData({ ...formData, projectType: type })
+                  setFormData({ ...formData, projectType: type.name })
                 }
-                className={`p-4 border rounded-lg cursor-pointer ${formData.projectType === type
-                    ? 'border-[#E07A5F]'
-                    : 'border-gray-300'
-                  }`}
+                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${
+                  formData.projectType === type.name
+                    ? "border-4 border-[#E07A5F] shadow-lg"
+                    : "hover:shadow-lg hover:shadow-[#4A7A63]/50"
+                }`}
               >
-                <h3 className="font-bold text-[#4A7A63]">{type}</h3>
+                <img
+                  src={type.image}
+                  alt={type.name}
+                  className="w-full h-32 object-cover"
+                />
+                <div
+                  className={`absolute inset-0 flex items-center justify-center ${
+                    formData.projectType === type.name
+                      ? "bg-[#E07A5F]/60"
+                      : "bg-black/40"
+                  }`}
+                >
+                  <h3 className="font-bold text-lg">{type.name}</h3>
+                </div>
               </div>
             ))}
           </div>
           <button
             onClick={handleNext}
-            className="mt-6 w-full bg-[#E07A5F] text-white py-2 rounded hover:bg-[#d46653]"
+            className="mt-6 w-full bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 rounded-lg hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
           >
             Next
           </button>
@@ -49,112 +101,129 @@ function GetQuote() {
 
       {/* Screen 2: Project Details */}
       {currentScreen === 2 && (
-        <div className="p-6 bg-white rounded-lg shadow-md max-w-lg w-full">
-          <h2 className="text-2xl font-bold text-[#4A7A63] mb-4">Project Details</h2>
-
-          {/* Project Name */}
-          <input
-            type="text"
-            placeholder="Project Name"
-            value={formData.projectDetails.name}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                projectDetails: {
-                  ...formData.projectDetails,
-                  name: e.target.value,
-                },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded mb-4"
-          />
+        <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-2xl w-full min-h-[60vh] min-w-[50vw]">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+            Project Details
+          </h2>
+          <div className="relative mb-7">
+            <input
+              type="text"
+              placeholder="Project Name"
+              value={formData.projectDetails.name}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  projectDetails: {
+                    ...formData.projectDetails,
+                    name: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+            />
+          </div>
 
           {/* Square Footage */}
-          <input
-            type="number"
-            placeholder="Square Footage (e.g., 500)"
-            value={formData.projectDetails.squareFootage}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                projectDetails: {
-                  ...formData.projectDetails,
-                  squareFootage: e.target.value,
-                },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded mb-4"
-          />
+          <div className="relative mb-7">
+            <input
+              type="number"
+              placeholder="Square Footage (e.g., 500)"
+              value={formData.projectDetails.squareFootage}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  projectDetails: {
+                    ...formData.projectDetails,
+                    squareFootage: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] placeholder-gray-400 text-white"
+            />
+          </div>
 
           {/* Preferred Completion Date */}
-          <label className="block text-left text-gray-600 mb-1">Preferred Completion Date</label>
-          <input
-            type="date"
-            value={formData.projectDetails.completionDate}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                projectDetails: {
-                  ...formData.projectDetails,
-                  completionDate: e.target.value,
-                },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded mb-4"
-          />
+          <label className="block text-left text-gray-400 mb-1">
+            Preferred Completion Date
+          </label>
+          <div className="relative mb-7">
+            <input
+              type="date"
+              value={formData.projectDetails.completionDate}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  projectDetails: {
+                    ...formData.projectDetails,
+                    completionDate: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+            />
+          </div>
 
           {/* Preferred Materials */}
-          <label className="block text-left text-gray-600 mb-1">Preferred Materials</label>
-          <select
-            value={formData.projectDetails.materials}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                projectDetails: {
-                  ...formData.projectDetails,
-                  materials: e.target.value,
-                },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded mb-4"
-          >
-            <option value="">Select Materials</option>
-            <option value="Gravel">Gravel</option>
-            <option value="Soil">Soil</option>
-            <option value="Turf/Grass">Turf/Grass</option>
-            <option value="Stones">Stones</option>
-            <option value="Paving Blocks">Paving Blocks</option>
-          </select>
+          <label className="block text-left text-gray-400 mb-1">
+            Preferred Materials
+          </label>
+          <div className="relative mb-7">
+            <select
+              value={formData.projectDetails.materials}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  projectDetails: {
+                    ...formData.projectDetails,
+                    materials: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] text-white"
+            >
+              <option value="" className="text-gray-400">
+                Select Materials
+              </option>
+              <option value="Gravel">Gravel</option>
+              <option value="Soil">Soil</option>
+              <option value="Turf/Grass">Turf/Grass</option>
+              <option value="Stones">Stones</option>
+              <option value="Paving Blocks">Paving Blocks</option>
+            </select>
+          </div>
 
           {/* Budget Range */}
-          <label className="block text-left text-gray-600 mb-1">Budget Range</label>
-          <input
-            type="text"
-            placeholder="e.g., $1000 - $5000"
-            value={formData.projectDetails.budget}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                projectDetails: {
-                  ...formData.projectDetails,
-                  budget: e.target.value,
-                },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded mb-4"
-          />
+          <label className="block text-left text-gray-400 mb-1">
+            Budget Range
+          </label>
+          <div className="relative mb-10">
+            <input
+              type="text"
+              placeholder="e.g., $1000 - $5000"
+              value={formData.projectDetails.budget}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  projectDetails: {
+                    ...formData.projectDetails,
+                    budget: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+            />
+          </div>
 
-          {/* Navigation Buttons */}
           <div className="flex justify-between">
             <button
               onClick={handleBack}
-              className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500"
+              className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600 transition-transform transform hover:scale-105"
             >
               Back
             </button>
             <button
               onClick={handleNext}
-              className="bg-[#E07A5F] text-white py-2 px-4 rounded hover:bg-[#d46653]"
+              className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
             >
               Next
             </button>
@@ -162,46 +231,59 @@ function GetQuote() {
         </div>
       )}
 
-      {/* Screen 3: Review and Submit */}
+      {/* Screen 3: User Details */}
       {currentScreen === 3 && (
-        <div className="p-6 bg-white rounded-lg shadow-md max-w-lg w-full">
-          <h2 className="text-2xl font-bold text-[#4A7A63] mb-4">Review Your Details</h2>
-          <div className="mb-4">
-            <p className="font-bold text-[#4A7A63]">Project Type:</p>
-            <p>{formData.projectType || 'Not Selected'}</p>
+        <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-lg w-full relative">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+            Final Step. Enter Your Details Please.
+          </h2>
+          {/* Full Name and Email Fields */}
+          <div className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={formData.userDetails.fullName}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  userDetails: {
+                    ...formData.userDetails,
+                    fullName: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-lg border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+            />
           </div>
-          <div className="mb-4">
-            <p className="font-bold text-[#4A7A63]">Project Name:</p>
-            <p>{formData.projectDetails.name || 'Not Provided'}</p>
-          </div>
-          <div className="mb-4">
-            <p className="font-bold text-[#4A7A63]">Square Footage:</p>
-            <p>{formData.projectDetails.squareFootage || 'Not Provided'}</p>
-          </div>
-          <div className="mb-4">
-            <p className="font-bold text-[#4A7A63]">Preferred Completion Date:</p>
-            <p>{formData.projectDetails.completionDate || 'Not Selected'}</p>
-          </div>
-          <div className="mb-4">
-            <p className="font-bold text-[#4A7A63]">Preferred Materials:</p>
-            <p>{formData.projectDetails.materials || 'Not Selected'}</p>
-          </div>
-          <div className="mb-4">
-            <p className="font-bold text-[#4A7A63]">Budget Range:</p>
-            <p>{formData.projectDetails.budget || 'Not Provided'}</p>
+          <div className="relative mb-6">
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={formData.userDetails.email}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  userDetails: {
+                    ...formData.userDetails,
+                    email: e.target.value,
+                  },
+                })
+              }
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-lg border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+            />
           </div>
           <div className="flex justify-between">
             <button
               onClick={handleBack}
-              className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500"
+              className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600 transition-transform transform hover:scale-105"
             >
               Back
             </button>
             <button
-              onClick={() => alert('Quote Submitted!')}
-              className="bg-[#E07A5F] text-white py-2 px-4 rounded hover:bg-[#d46653]"
+              onClick={handleExportPDF}
+              className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
             >
-              Submit
+              Export PDF
             </button>
           </div>
         </div>
