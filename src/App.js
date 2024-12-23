@@ -16,9 +16,9 @@ function App() {
 ">
           <header className="container mx-auto flex justify-between items-center">
             <div>
-              <img src={topGardenLogo} alt="Top Garden Logo" className="size-20 w-[8.5rem] h-auto" />
+              <img src={topGardenLogo} alt="Top Garden Logo" className="size-20 w-[8rem]" />
             </div>
-            <div className="text-5xl font-bold text-[#E07A5F] tracking-wide absolute right-1/2 transform -translate-x-1/2"
+            <div className="text-5xl font-bold text-[#E07A5F] tracking-wide absolute right-1/2 transform -translate-x-1/2 hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
               style={{ textShadow: '1px 1px 0px black' }}>
               <h1>Top Garden</h1>
             </div>

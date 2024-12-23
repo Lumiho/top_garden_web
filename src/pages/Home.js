@@ -17,14 +17,13 @@ function Home() {
 
       <section className="bg-[#F4F1DE] text-center py-10">
         <div class="flex items-center justify-center gap-4">
-          <img
-            src='../Media/grass_clipart_.png'
+          <img src='../Media/grass_clip.png'
             alt="Grass"
             class="w-16 h-auto"
           />
           <h2 className="text-3xl font-bold text-[#4A7A63]" style={{ textShadow: '.1px .1px 0px black' }}>About Us</h2>
           <img
-            src='../Media/grass_clipart_.png'
+            src='../Media/grass_clip.png'
             alt="Grass"
             class="w-16 h-auto"
           />
