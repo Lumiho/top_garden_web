@@ -42,7 +42,7 @@ function App() {
         </Routes>
 
         {/* Footer */}
-        <footer className="bg-[#E07A5F] text-[#F4F1DE] text-center py-6">
+        <footer className="bg-[#E07A5F] text-[#F4F1DE] text-center py-6" style={{ textShadow: '1px 1px 0px black' }}>
           <p>&copy; 2024 Top Garden Website. All rights reserved.</p>
           <ul className="flex justify-center space-x-6 mt-4">
             <li><a href="#privacy" className="hover:underline text-[#F4F1DE]">Privacy Policy</a></li>
