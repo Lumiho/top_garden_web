@@ -1,0 +1,31 @@
+.subtitle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #4A7A63;
+    /* Match your website's color scheme */
+    margin: 0 10px;
+    text-align: center;
+}
+
+.grass {
+    width: 50px;
+    /* Adjust size as needed */
+    height: auto;
+}
+
+.left-grass {
+    margin-right: -10px;
+    /* Fine-tune spacing */
+}
+
+.right-grass {
+    margin-left: -10px;
+    /* Fine-tune spacing */
+}

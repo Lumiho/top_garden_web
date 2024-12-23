@@ -1,5 +1,6 @@
 import React from 'react';
 import exampleImg from '../Media/irrigationImg.png'
+import '../Components/Home.css'
 function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -11,11 +12,23 @@ function Home() {
       >
 
         <h1 className="text-7xl md:text-8xl font-bold">Welcome to Top Garden</h1>
-        <p className="mt-4 text-xl md:text-2xl">Turning your outdoor spaces into dreamscapes.</p>
+        <p className="mt-4 text-xl md:text-3xl">Turning your outdoor spaces into dreamscapes.</p>
       </section>
 
       <section className="bg-[#F4F1DE] text-center py-10">
-        <h2 className="text-3xl font-bold text-[#4A7A63]" style={{ textShadow: '.1px .1px 0px black' }}>About Us</h2>
+        <div class="flex items-center justify-center gap-4">
+          <img
+            src='../Media/grass_clipart_.png'
+            alt="Grass"
+            class="w-16 h-auto"
+          />
+          <h2 className="text-3xl font-bold text-[#4A7A63]" style={{ textShadow: '.1px .1px 0px black' }}>About Us</h2>
+          <img
+            src='../Media/grass_clipart_.png'
+            alt="Grass"
+            class="w-16 h-auto"
+          />
+        </div>
         <p className="text-lg text-[#4A7A63] mt-4">
           At Top Garden, we specialize in creating stunning outdoor spaces. From landscaping to irrigation, our team brings your vision to life.
         </p>
