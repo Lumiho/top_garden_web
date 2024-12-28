@@ -11,9 +11,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Header with Navbar */}
-        <div className="bg-[#4A7A63]  text-[#F4F1DE] py-4 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63]
-">
+        <div className="bg-[#4A7A63]  text-[#F4F1DE] py-4 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63]">
           <header className="container mx-auto flex justify-between items-center">
             <div>
               <img src={topGardenLogo} alt="Top Garden Logo" className="size-20 w-[8rem]" />
@@ -33,7 +31,6 @@ function App() {
           </header>
         </div>
 
-        {/* Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -41,14 +38,6 @@ function App() {
           <Route path="/get-quote" element={<GetQuote />} />
         </Routes>
 
-        {/* Footer */}
-        <footer className="bg-[#E07A5F] text-[#F4F1DE] text-center py-6" style={{ textShadow: '1px 1px 0px black' }}>
-          <p>&copy; 2024 Top Garden Website. All rights reserved.</p>
-          <ul className="flex justify-center space-x-6 mt-4">
-            <li><a href="#privacy" className="hover:underline text-[#F4F1DE]">Privacy Policy</a></li>
-            <li><a href="#terms" className="hover:underline text-[#F4F1DE]">Terms of Service</a></li>
-          </ul>
-        </footer>
       </div>
     </Router>
   );
