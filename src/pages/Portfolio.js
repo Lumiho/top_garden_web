@@ -11,20 +11,32 @@ const projects = [
   },
   {
     id: 2,
-    category: 'Irrigation',
-    description: 'Efficient irrigation systems for healthy gardens.',
+    category: 'Sod & Irrigation Installation',
+    description: 'FIX DESCRIPTION ////Efficient irrigation systems for healthy gardens.',
     image: landscapingImage, // Replace with actual images
   },
   {
     id: 3,
-    category: 'Design',
-    description: 'Creative garden designs tailored to your preferences.',
+    category: 'Turf Repair & System Troubleshooting',
+    description: ' DESCRIPTION',
     image: pruningImage, // Replace with actual images
   },
   {
     id: 4,
-    category: 'Lawn Care',
+    category: 'Lawn Care, Yard Clean-Ups',
     description: 'Premium lawn care services for lush, green grass.',
+    image: 'https://via.placeholder.com/300x200', // Replace with actual images
+  },
+  {
+    id: 5,
+    category: 'Junk/Trash/Debris Removal',
+    description: 'DESCRIPTION',
+    image: 'https://via.placeholder.com/300x200', // Replace with actual images
+  },
+  {
+    id: 6,
+    category: 'High-End Gardening',
+    description: 'DESCRITPIONS',
     image: 'https://via.placeholder.com/300x200', // Replace with actual images
   },
 ];
@@ -49,6 +61,9 @@ function Portfolio() {
             </div>
           </div>
         ))}
+      </div>
+      <div className='py-10 text-3xl text-center'>
+        Get quote now
       </div>
     </div>
   );
