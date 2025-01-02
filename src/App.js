@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import Home from './pages/Home';
 import Reviews from './pages/Reviews';
 import Portfolio from './pages/Portfolio';
@@ -7,6 +9,17 @@ import GetQuote from './pages/GetQuote';
 import "./index.css";
 import topGardenLogo from './Media/top_garden2_crop.png';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+// Fix for Leaflet marker icons (optional)
+import L from 'leaflet';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+});
 
 function App() {
   return (
@@ -71,14 +84,13 @@ function App() {
           <Route path="/get-quote" element={<GetQuote />} />
         </Routes>
 
-        {/* Footer Section */}
         <footer className="bg-black text-white py-10">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-6">
             {/* Left Section */}
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold mb-4">Top Garden</h3>
               <p className="mb-2 flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> 123 Green Street, San Francisco, CA
+                <FaMapMarkerAlt className="mr-2" />  Golden Gate, San Francisco, CA
               </p>
               <p className="mb-2 flex items-center">
                 <FaPhoneAlt className="mr-2" /> +1 123 456 7890
@@ -88,14 +100,21 @@ function App() {
               </p>
             </div>
 
-            {/* Middle Section: Google Map */}
+            {/* Middle Section: Leaflet Map */}
             <div className="w-full md:w-1/3 h-48 md:h-64 relative">
-              <iframe
-                title="Google Map"
-                src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Golden+Gate+Bridge,San+Francisco,CA"
-                className="w-full h-full border-0 rounded"
-                allowFullScreen
-              ></iframe>
+              <MapContainer
+                center={[37.8199, -122.4783]} 
+                zoom={13}
+                className="w-full h-full rounded"
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstree21w2tmap.org/{z}/{x}/{y}.png"
+                  attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                />
+                <Marker position={[37.8199, -122.4783]}>
+                  <Popup>Golden Gate Bridge, San Francisco, CA</Popup>
+                </Marker>
+              </MapContainer>
             </div>
 
             {/* Right Section: Follow Us */}
@@ -109,10 +128,11 @@ function App() {
             </div>
           </div>
 
-          <div className="text-center mt-6 border-t border-gray-700 pt-4">
+          <div className="text-center mt-6 pt-4">
             <p>© 2024 Top Garden. All rights reserved.</p>
           </div>
         </footer>
+
       </div>
     </Router>
   );
