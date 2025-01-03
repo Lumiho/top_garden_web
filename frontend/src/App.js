@@ -29,12 +29,12 @@ function App() {
         <div className="bg-gradient-to-r from-[#4D8C66] to-[#4A7A63] text-[#F4F1DE] py-4">
           <header className="container mx-auto flex justify-between items-center">
             {/* Logo */}
-            <div>
+            <Link to="/" className='hover:scale-110 transition-transform'>
               <img src={topGardenLogo} alt="Top Garden Logo" className="w-32" />
-            </div>
+            </Link>
             {/* Title */}
             <div className="text-5xl font-bold text-[#E07A5F] tracking-wide absolute right-1/2 transform translate-x-1/2 hover:scale-105 transition-transform">
-              <h1 style={{ textShadow: '1px 1px 0px black' }}>Top Garden</h1>
+              <Link to="/" style={{ textShadow: '1px 1px 0px black' }}>Top Garden</Link>
             </div>
             {/* Navigation */}
             <nav>
@@ -103,7 +103,7 @@ function App() {
             {/* Middle Section: Leaflet Map */}
             <div className="w-full md:w-1/3 h-48 md:h-64 relative">
               <MapContainer
-                center={[37.8199, -122.4783]} 
+                center={[37.8199, -122.4783]}
                 zoom={13}
                 className="w-full h-full rounded"
               >

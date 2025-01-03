@@ -2,6 +2,8 @@ import React from 'react';
 import '../Components/Portfolio.css'
 import landscapingImage from '../Media/irrigationImg.png' // just testings
 import pruningImage from '../Media/pruning.jpeg'
+import { Link } from 'react-router-dom';
+
 const projects = [
   {
     id: 1,
@@ -45,7 +47,7 @@ function Portfolio() {
   return (
     <div className="bg-[#F4F1DE] py-10">
       <h1 className="text-3xl font-bold text-center text-[#4A7A63]" style={{ textShadow: '.1px .1px 0px black' }}>Our Portfolio</h1>
-      <p className="text-center text-lg text-[#4A7A63] mt-4" style={{ textShadow: '.1px .1px 0px darkgreen' }}>
+      <p className="text-center text-lg text-[#4A7A63] mt-4" style={{ textShadow: '.2px .2px .1px darkgreen' }}>
         Browse through our completed projects and services we proudly offer.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10 px-4">
@@ -63,7 +65,7 @@ function Portfolio() {
         ))}
       </div>
       <div className='py-10 text-3xl text-center'>
-        Get quote now
+        <Link to="/get-quote" className='text-3xl flex items-center justify-center font-bold border-lightyellow-300 hover:bg-[#E07A5F] text-[#E07A5F] hover:text-[#4A7A63] hover:scale-105 transition-transform px-4 rounded-lg' style={{ textShadow: '.5px .5px .5px black' }}>Get a Quote Today!</Link>
       </div>
     </div>
   );
