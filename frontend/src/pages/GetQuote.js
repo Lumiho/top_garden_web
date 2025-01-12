@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import try1 from '../Media/try1.jpg'
-import irrigationImg from '../Media/irrigationImg.png'
+import axios from "axios";
+import try1 from "../Media/try1.jpg";
+import irrigationImg from "../Media/irrigationImg.png";
 
 function GetQuote() {
   const [currentScreen, setCurrentScreen] = useState(1);
@@ -29,22 +30,15 @@ function GetQuote() {
     { name: "Maintenance", image: irrigationImg },
   ];
 
-  const handleExportPDF = () => {
-    const quoteData = `
-      Project Type: ${formData.projectType}
-      Project Name: ${formData.projectDetails.name}
-      Square Footage: ${formData.projectDetails.squareFootage}
-      Completion Date: ${formData.projectDetails.completionDate}
-      Materials: ${formData.projectDetails.materials}
-      Budget: ${formData.projectDetails.budget}
-      Full Name: ${formData.userDetails.fullName}
-      Email: ${formData.userDetails.email}
-    `;
-    const blob = new Blob([quoteData], { type: "application/pdf" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "quote.pdf";
-    link.click();
+  const handleFormSubmit = async () => {
+    try {
+      const response = await axios.post("http://localhost:5000/api/quotes", formData);
+      alert("Quote submitted successfully!");
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error submitting quote:", error);
+      alert("Failed to submit quote. Please try again.");
+    }
   };
 
   return (
@@ -67,10 +61,11 @@ function GetQuote() {
                 onClick={() =>
                   setFormData({ ...formData, projectType: type.name })
                 }
-                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${formData.projectType === type.name
-                  ? "border-4 border-[#E07A5F] shadow-lg"
-                  : "hover:shadow-lg hover:shadow-[#4A7A63]/50"
-                  }`}
+                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${
+                  formData.projectType === type.name
+                    ? "border-4 border-[#E07A5F] shadow-lg"
+                    : "hover:shadow-lg hover:shadow-[#4A7A63]/50"
+                }`}
               >
                 <img
                   src={type.image}
@@ -78,10 +73,11 @@ function GetQuote() {
                   className="w-full h-32 object-cover"
                 />
                 <div
-                  className={`absolute inset-0 flex items-center justify-center ${formData.projectType === type.name
-                    ? "bg-[#E07A5F]/60"
-                    : "bg-black/40"
-                    }`}
+                  className={`absolute inset-0 flex items-center justify-center ${
+                    formData.projectType === type.name
+                      ? "bg-[#E07A5F]/60"
+                      : "bg-black/40"
+                  }`}
                 >
                   <h3 className="font-bold text-lg">{type.name}</h3>
                 </div>
@@ -120,8 +116,6 @@ function GetQuote() {
               className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
             />
           </div>
-
-          {/* Square Footage */}
           <div className="relative mb-7">
             <input
               type="number"
@@ -139,11 +133,6 @@ function GetQuote() {
               className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] placeholder-gray-400 text-white"
             />
           </div>
-
-          {/* Preferred Completion Date */}
-          <label className="block text-left text-gray-400 mb-1">
-            Preferred Completion Date
-          </label>
           <div className="relative mb-7">
             <input
               type="date"
@@ -160,11 +149,6 @@ function GetQuote() {
               className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
             />
           </div>
-
-          {/* Preferred Materials */}
-          <label className="block text-left text-gray-400 mb-1">
-            Preferred Materials
-          </label>
           <div className="relative mb-7">
             <select
               value={formData.projectDetails.materials}
@@ -179,7 +163,7 @@ function GetQuote() {
               }
               className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] text-white"
             >
-              <option value="" className="text-gray-400">
+              <option value="" disabled>
                 Select Materials
               </option>
               <option value="Gravel">Gravel</option>
@@ -189,15 +173,10 @@ function GetQuote() {
               <option value="Paving Blocks">Paving Blocks</option>
             </select>
           </div>
-
-          {/* Budget Range */}
-          <label className="block text-left text-gray-400 mb-1">
-            Budget Range
-          </label>
-          <div className="relative mb-10">
+          <div className="relative mb-7">
             <input
               type="text"
-              placeholder="e.g., $1000 - $5000"
+              placeholder="Budget (e.g., $1000 - $5000)"
               value={formData.projectDetails.budget}
               onChange={(e) =>
                 setFormData({
@@ -211,7 +190,6 @@ function GetQuote() {
               className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
             />
           </div>
-
           <div className="flex justify-between">
             <button
               onClick={handleBack}
@@ -231,12 +209,11 @@ function GetQuote() {
 
       {/* Screen 3: User Details */}
       {currentScreen === 3 && (
-        <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-lg w-full relative">
+        <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-2xl w-full min-h-[60vh] min-w-[50vw]">
           <h2 className="text-3xl font-bold text-white mb-6 text-center">
-            Final Step. Enter Your Details Please.
+            Enter Your Details
           </h2>
-          {/* Full Name and Email Fields */}
-          <div className="relative mb-4">
+          <div className="relative mb-6">
             <input
               type="text"
               placeholder="Full Name"
@@ -250,13 +227,13 @@ function GetQuote() {
                   },
                 })
               }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-lg border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
             />
           </div>
           <div className="relative mb-6">
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder="Email"
               value={formData.userDetails.email}
               onChange={(e) =>
                 setFormData({
@@ -267,7 +244,7 @@ function GetQuote() {
                   },
                 })
               }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-lg border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
             />
           </div>
           <div className="flex justify-between">
@@ -278,10 +255,10 @@ function GetQuote() {
               Back
             </button>
             <button
-              onClick={handleExportPDF}
+              onClick={handleFormSubmit}
               className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
             >
-              Export PDF
+              Submit Quote
             </button>
           </div>
         </div>
