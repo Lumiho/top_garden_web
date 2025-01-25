@@ -1,17 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
-  } catch (error) {
-    console.error(`Error: ${error.message}`.red.underline.bold);
-    process.exit(1); // Exit process with failure
-  }
+    try {
+        await mongoose.connect("mongodb+srv://adminUser:<Academicweapon@2025>@topgardenwebsite.oteka.mongodb.net/?retryWrites=true&w=majority&appName=TopGardenWebsite", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("MongoDB connected!");
+    } catch (err) {
+        console.error(err.message);
+        process.exit(1);
+    }
 };
 
 module.exports = connectDB;

@@ -2,7 +2,6 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken'); 
 const bcrypt = require('bcrypt'); 
 require('dotenv').config();
-const { registerValidation, loginValidation } = require('../utils/validation');
 
 const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
