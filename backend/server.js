@@ -7,8 +7,11 @@ const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 require('colors');
-const reviewRoutes = require('./routes/reviewRoutes'); //for the api routes
 
+//for the api routes
+const reviewRoutes = require('./routes/reviewRoutes');
+const portfolioRoute = require('./routes/portfolioRoute');
+const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -27,7 +30,7 @@ app.use(express.json());
 // Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/reviews', reviewRoutes); // Reviews routes (with prefix)
-
+app.use('/api/v1/portfolio', portfolioRoute);
 
 // Error Handling Middleware
 app.use(errorHandler);
@@ -43,6 +46,12 @@ process.on('SIGINT', async () => {
   await mongoose.connection.close();
   process.exit(0);
 });
+
+//images
+
+// Middleware to serve static files
+app.use('/images', express.static(path.join(__dirname, '/Media')));
+
 
 // Set the server port
 const PORT = process.env.PORT || 5000;
