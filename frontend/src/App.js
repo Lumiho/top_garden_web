@@ -1,19 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import Home from './pages/Home';
-import Reviews from './pages/Reviews';
-import Portfolio from './pages/Portfolio';
-import GetQuote from './pages/GetQuote';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import Home from "./pages/Home";
+import Reviews from "./pages/Reviews";
+import Portfolio from "./pages/Portfolio";
+import GetQuote from "./pages/GetQuote";
 import "./index.css";
-import topGardenLogo from './Media/top_garden2_crop.png';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import topGardenLogo from "./Media/top_garden2_crop.png";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+} from "react-icons/fa";
 
-// Fix for Leaflet marker icons (optional)
-import L from 'leaflet';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import L from "leaflet";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -26,23 +31,15 @@ function App() {
     <Router>
       <div className="App">
         {/* Header Section */}
-        <div className="bg-gradient-to-r from-[#4D8C66] to-[#4A7A63] text-[#F4F1DE] py-4">
-          <header className="container mx-auto flex justify-between items-center">
-            {/* Logo */}
-            <Link to="/" className='hover:scale-110 transition-transform'>
-              <img src={topGardenLogo} alt="Top Garden Logo" className="w-32" />
-            </Link>
-            {/* Title */}
-            <div className="text-5xl font-bold text-[#E07A5F] tracking-wide absolute right-1/2 transform translate-x-1/2 hover:scale-105 transition-transform">
-              <Link to="/" style={{ textShadow: '1px 1px 0px black' }}>Top Garden</Link>
-            </div>
-            {/* Navigation */}
+        <div className="fixed top-0 w-full z-50 h-25 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63] shadow-lg">
+          <header className="container mx-auto flex items-center justify-between px-8 py-6">
+            {/* Left Navigation */}
             <nav>
               <ul className="flex space-x-6">
                 <li>
                   <Link
                     to="/"
-                    className="relative text-xl text-[#F4F1DE] after:block after:h-[2px] after:bg-[#000000] after:w-0 after:transition-all after:duration-400 hover:after:w-full"
+                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Home
                   </Link>
@@ -50,7 +47,7 @@ function App() {
                 <li>
                   <Link
                     to="/portfolio"
-                    className="relative text-xl text-[#F4F1DE] after:block after:h-[2px] after:bg-[#000000] after:w-0 after:transition-all after:duration-400 hover:after:w-full"
+                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Portfolio
                   </Link>
@@ -58,7 +55,7 @@ function App() {
                 <li>
                   <Link
                     to="/Reviews"
-                    className="relative text-xl text-[#F4F1DE] after:block after:h-[2px] after:bg-[#000000] after:w-0 after:transition-all after:duration-400 hover:after:w-full"
+                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Reviews
                   </Link>
@@ -66,31 +63,56 @@ function App() {
                 <li>
                   <Link
                     to="/get-quote"
-                    className="relative text-xl text-[#F4F1DE] after:block after:h-[2px] after:bg-[#000000] after:w-0 after:transition-all after:duration-400 hover:after:w-full"
+                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Get a Quote
                   </Link>
                 </li>
               </ul>
             </nav>
+
+            {/* Center Section */}
+            <div className="text-4xl font-bold text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform">
+              <Link to="/" className="font-heading">
+                Top Garden
+              </Link>
+            </div>
+
+            {/* Right Section */}
+            <div className="flex items-center">
+              <Link to="/" className="hover:scale-110 transition-transform">
+                <img
+                  src={topGardenLogo}
+                  alt="Top Garden Logo"
+                  className="w-12 h-12 mr-4"
+                />
+              </Link>
+              <button className="bg-[#E07A5F] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
+                Login
+              </button>
+            </div>
           </header>
         </div>
 
         {/* Main Content */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/Reviews" element={<Reviews />} />
-          <Route path="/get-quote" element={<GetQuote />} />
-        </Routes>
+        <div className="pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/Reviews" element={<Reviews />} />
+            <Route path="/get-quote" element={<GetQuote />} />
+          </Routes>
+        </div>
 
+        {/* Footer Section */}
         <footer className="bg-black text-white py-10">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-6">
             {/* Left Section */}
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold mb-4">Top Garden</h3>
               <p className="mb-2 flex items-center">
-                <FaMapMarkerAlt className="mr-2" />  Golden Gate, San Francisco, CA
+                <FaMapMarkerAlt className="mr-2" /> Golden Gate, San Francisco,
+                CA
               </p>
               <p className="mb-2 flex items-center">
                 <FaPhoneAlt className="mr-2" /> +1 123 456 7890
@@ -108,7 +130,7 @@ function App() {
                 className="w-full h-full rounded"
               >
                 <TileLayer
-                  url="https://{s}.tile.openstree21w2tmap.org/{z}/{x}/{y}.png"
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
                 />
                 <Marker position={[37.8199, -122.4783]}>
@@ -121,7 +143,6 @@ function App() {
             <div className="mb-6 md:mb-0">
               <div className="flex space-x-4 mb-4">
                 <FaFacebookF className="text-[#4267B2] text-xl cursor-pointer" />
-                <FaTwitter className="text-[#1DA1F2] text-xl cursor-pointer" />
                 <FaInstagram className="text-[#E4405F] text-xl cursor-pointer" />
               </div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
@@ -132,7 +153,6 @@ function App() {
             <p>© 2024 Top Garden. All rights reserved.</p>
           </div>
         </footer>
-
       </div>
     </Router>
   );
