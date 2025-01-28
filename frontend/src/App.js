@@ -87,7 +87,7 @@ function App() {
                   className="w-12 h-12 mr-4"
                 />
               </Link>
-              <button className="bg-[#E07A5F] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
+              <button className="bg-[#E07A5F] text-white px-6 py-2 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
                 Login
               </button>
             </div>
@@ -111,11 +111,10 @@ function App() {
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold mb-4">Top Garden</h3>
               <p className="mb-2 flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> Golden Gate, San Francisco,
-                CA
+                <FaMapMarkerAlt className="mr-2" /> Remote, CA
               </p>
               <p className="mb-2 flex items-center">
-                <FaPhoneAlt className="mr-2" /> +1 123 456 7890
+                <FaPhoneAlt className="mr-2" /> 2092639292
               </p>
               <p className="mb-2 flex items-center">
                 <FaEnvelope className="mr-2" /> info@topgarden.com
@@ -142,10 +141,16 @@ function App() {
             {/* Right Section: Follow Us */}
             <div className="mb-6 md:mb-0">
               <div className="flex space-x-4 mb-4">
-                <FaFacebookF className="text-[#4267B2] text-xl cursor-pointer" />
-                <FaInstagram className="text-[#E4405F] text-xl cursor-pointer" />
+                <FaFacebookF className="text-[#4267B2] text-3xl cursor-pointer" />
+                <a
+                  href="https://www.instagram.com/topgarden_landscaping"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram className="text-[#E4405F] text-3xl cursor-pointer hover:scale-110 transition-transform" />
+                </a>
               </div>
-              <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+              <h3 className="text-2xl font-bold mb-4">Follow Us!</h3>
             </div>
           </div>
 
