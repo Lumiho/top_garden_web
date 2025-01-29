@@ -61,11 +61,10 @@ function GetQuote() {
                 onClick={() =>
                   setFormData({ ...formData, projectType: type.name })
                 }
-                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${
-                  formData.projectType === type.name
-                    ? "border-4 border-[#E07A5F] shadow-lg"
-                    : "hover:shadow-lg hover:shadow-[#4A7A63]/50"
-                }`}
+                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${formData.projectType === type.name
+                  ? "border-4 border-[#E07A5F] shadow-lg"
+                  : "hover:shadow-lg hover:shadow-[#4A7A63]/50"
+                  }`}
               >
                 <img
                   src={type.image}
@@ -73,11 +72,10 @@ function GetQuote() {
                   className="w-full h-32 object-cover"
                 />
                 <div
-                  className={`absolute inset-0 flex items-center justify-center ${
-                    formData.projectType === type.name
-                      ? "bg-[#E07A5F]/60"
-                      : "bg-black/40"
-                  }`}
+                  className={`absolute inset-0 flex items-center justify-center ${formData.projectType === type.name
+                    ? "bg-[#E07A5F]/60"
+                    : "bg-black/40"
+                    }`}
                 >
                   <h3 className="font-bold text-lg">{type.name}</h3>
                 </div>

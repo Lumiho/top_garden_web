@@ -3,46 +3,6 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// const projects = [
-//   {
-//     id: 1,
-//     category: 'Landscaping',
-//     description: 'Beautiful landscaping projects to transform your outdoor spaces.',
-//     image: pruningImage, // Replace with actual images
-//   },
-//   {
-//     id: 2,
-//     category: 'Sod & Irrigation Installation',
-//     description: 'FIX DESCRIPTION ////Efficient irrigation systems for healthy gardens.',
-//     image: landscapingImage, // Replace with actual images
-//   },
-//   {
-//     id: 3,
-//     category: 'Turf Repair & System Troubleshooting',
-//     description: ' DESCRIPTION',
-//     image: pruningImage, // Replace with actual images
-//   },
-//   {
-//     id: 4,
-//     category: 'Lawn Care, Yard Clean-Ups',
-//     description: 'Premium lawn care services for lush, green grass.',
-//     image: 'https://via.placeholder.com/300x200', // Replace with actual images
-//   },
-//   {
-//     id: 5,
-//     category: 'Junk/Trash/Debris Removal',
-//     description: 'DESCRIPTION',
-//     image: 'https://via.placeholder.com/300x200', // Replace with actual images
-//   },
-//   {
-//     id: 6,
-//     category: 'High-End Gardening',
-//     description: 'DESCRITPIONS',
-//     image: 'https://via.placeholder.com/300x200', // Replace with actual images
-//   },
-// ];
-
-
 function Portfolio() {
   const [portfolio, setPortfolio] = useState([]); // State to store fetched reviews
 
