@@ -33,7 +33,32 @@ function App() {
         {/* Header Section */}
         <div className="fixed top-0 w-full z-50 h-25 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63] shadow-lg">
           <header className="container mx-auto flex items-center justify-between px-8 py-6">
-            {/* Left Navigation */}
+            {/* Left Section */}
+            <div className="flex items-center">
+
+              <button className="bg-[#E07A5F] text-white px-6 py-2 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
+                Login
+              </button>
+            </div>
+
+            {/* Center Section */}
+            <div className="flex items-center justify-center space-x-2">
+              <Link to="/" className="hover:scale-110 transition-transform">
+                <img
+                  src={topGardenLogo}
+                  alt="Top Garden Logo"
+                  className="w-16 h-14 mr-4 "
+                />
+              </Link>
+              <div className="text-4xl font-bold text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform leading-none">
+
+                <Link to="/" className="font-heading">
+                  Top Garden
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Navigation */}
             <nav>
               <ul className="flex space-x-6">
                 <li>
@@ -44,14 +69,14 @@ function App() {
                     Home
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     to="/portfolio"
                     className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Portfolio
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     to="/Reviews"
@@ -70,27 +95,6 @@ function App() {
                 </li>
               </ul>
             </nav>
-
-            {/* Center Section */}
-            <div className="text-4xl font-bold text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform">
-              <Link to="/" className="font-heading">
-                Top Garden
-              </Link>
-            </div>
-
-            {/* Right Section */}
-            <div className="flex items-center">
-              <Link to="/" className="hover:scale-110 transition-transform">
-                <img
-                  src={topGardenLogo}
-                  alt="Top Garden Logo"
-                  className="w-12 h-12 mr-4"
-                />
-              </Link>
-              <button className="bg-[#E07A5F] text-white px-6 py-2 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
-                Login
-              </button>
-            </div>
           </header>
         </div>
 
