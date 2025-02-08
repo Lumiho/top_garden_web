@@ -29,7 +29,7 @@ function Home() {
       }
     };
 
-    const interval = setInterval(startAutoScroll, 30); 
+    const interval = setInterval(startAutoScroll, 30);
     return () => clearInterval(interval);
   }, []);
 
@@ -52,7 +52,7 @@ function Home() {
               Explore Plans
             </button>
             <button
-              className="bg-[#4A7A63] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#E07A5F] hover:scale-105"
+              className="bg-[#E07A5F] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#4A7A63] hover:scale-105"
               onClick={() => (window.location.href = "tel:2092639292")}
             >
               Contact Us

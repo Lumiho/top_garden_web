@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
-import Portfolio from "./pages/Portfolio";
+// import Portfolio from "./pages/Portfolio";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import topGardenLogo from "./Media/top_garden2_crop.png";
@@ -33,15 +33,8 @@ function App() {
         {/* Header Section */}
         <div className="fixed top-0 w-full z-50 h-25 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63] shadow-lg">
           <header className="container mx-auto flex items-center justify-between px-8 py-6">
+
             {/* Left Section */}
-            <div className="flex items-center">
-
-              <button className="bg-[#E07A5F] text-white px-6 py-2 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
-                Login
-              </button>
-            </div>
-
-            {/* Center Section */}
             <div className="flex items-center justify-center space-x-2">
               <Link to="/" className="hover:scale-110 transition-transform">
                 <img
@@ -50,7 +43,7 @@ function App() {
                   className="w-16 h-14 mr-4 "
                 />
               </Link>
-              <div className="text-4xl font-bold text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform leading-none">
+              <div className="text-5xl font-bold text-shadow text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform drop-shadow-xl">
 
                 <Link to="/" className="font-heading">
                   Top Garden
@@ -93,6 +86,11 @@ function App() {
                     Get a Quote
                   </Link>
                 </li>
+                <li>
+                  <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
+                    Login
+                  </button>
+                </li>
               </ul>
             </nav>
           </header>
@@ -102,7 +100,7 @@ function App() {
         <div className="pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            {/* <Route path="/portfolio" element={<Portfolio />} /> */}
             <Route path="/Reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
           </Routes>
