@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
 import Portfolio from "./pages/Portfolio";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
-import topGardenLogo from "./Media/top_garden2_crop.png";
+import TopGardenLogo from "./Media/topgarden_logo.png";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -15,16 +13,6 @@ import {
   FaFacebookF,
   FaInstagram,
 } from "react-icons/fa";
-
-import L from "leaflet";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
-
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-});
 
 function App() {
   return (
@@ -82,7 +70,7 @@ function App() {
             <div className="flex items-center">
               <Link to="/" className="hover:scale-110 transition-transform">
                 <img
-                  src={topGardenLogo}
+                  src={TopGardenLogo}
                   alt="Top Garden Logo"
                   className="w-12 h-12 mr-4"
                 />
@@ -105,59 +93,59 @@ function App() {
         </div>
 
         {/* Footer Section */}
-        <footer className="bg-black text-white py-10">
-          <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-6">
-            {/* Left Section */}
-            <div className="mb-6 md:mb-0">
-              <h3 className="text-xl font-bold mb-4">Top Garden</h3>
+        <footer className="bg-black text-white py-7">
+          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-5">
+            
+            {/* Left Section: Contact Info */}
+            <div className="text-left">
+              {/* <h3 className="text-xl font-bold mb-3">Top Garden</h3> */}
               <p className="mb-2 flex items-center">
                 <FaMapMarkerAlt className="mr-2" /> Remote, CA
               </p>
               <p className="mb-2 flex items-center">
-                <FaPhoneAlt className="mr-2" /> 2092639292
+                <FaPhoneAlt className="mr-2" /> (209) 263-9292
               </p>
               <p className="mb-2 flex items-center">
                 <FaEnvelope className="mr-2" /> info@topgarden.com
               </p>
             </div>
 
-            {/* Middle Section: Leaflet Map */}
-            <div className="w-full md:w-1/3 h-48 md:h-64 relative">
-              <MapContainer
-                center={[37.8199, -122.4783]}
-                zoom={13}
-                className="w-full h-full rounded"
-              >
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                />
-                <Marker position={[37.8199, -122.4783]}>
-                  <Popup>Golden Gate Bridge, San Francisco, CA</Popup>
-                </Marker>
-              </MapContainer>
+            {/* Center Section: Logo */}
+            <div>
+              <img
+                src={TopGardenLogo}
+                alt="Top Garden Logo"
+                className="w-40 h-40"
+              />
             </div>
 
-            {/* Right Section: Follow Us */}
-            <div className="mb-6 md:mb-0">
-              <div className="flex space-x-4 mb-4">
-                <FaFacebookF className="text-[#4267B2] text-3xl cursor-pointer" />
+            {/* Right Section: Social Media */}
+            <div className="flex flex-col items-center">
+              <div className="flex space-x-6">
+                <a
+                  href="https://www.facebook.com/p/Top-Garden-Landscaping-Design-100070947193816"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF className="text-[#4267B2] text-4xl cursor-pointer hover:scale-110 transition-transform" />
+                </a>
                 <a
                   href="https://www.instagram.com/topgarden_landscaping"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram className="text-[#E4405F] text-3xl cursor-pointer hover:scale-110 transition-transform" />
+                  <FaInstagram className="text-[#E4405F] text-4xl cursor-pointer hover:scale-110 transition-transform" />
                 </a>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Follow Us!</h3>
             </div>
           </div>
 
+          {/* Copyright Notice */}
           <div className="text-center mt-6 pt-4">
             <p>© 2024 Top Garden. All rights reserved.</p>
           </div>
         </footer>
+
       </div>
     </Router>
   );
