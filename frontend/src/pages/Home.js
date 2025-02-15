@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import exampleImg from "../Media/irrigationImg.png";
 import slideshow1 from "../Media/slideshow1.jpg";
 import slideshow2 from "../Media/slideshow2.jpg";
@@ -139,6 +139,7 @@ function Home() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

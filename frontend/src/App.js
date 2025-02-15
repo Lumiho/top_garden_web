@@ -26,7 +26,7 @@ function App() {
             <div className="flex items-center justify-center space-x-2">
               <Link to="/" className="hover:scale-110 transition-transform">
                 <img
-                  src={topGardenLogo}
+                  src={TopGardenLogo}
                   alt="Top Garden Logo"
                   className="w-16 h-14 mr-4 "
                 />
@@ -50,14 +50,6 @@ function App() {
                     Home
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    to="/portfolio"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
-                  >
-                    Portfolio
-                  </Link>
-                </li> */}
                 <li>
                   <Link
                     to="/Reviews"
@@ -97,7 +89,7 @@ function App() {
         {/* Footer Section */}
         <footer className="bg-black text-white py-7">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-5">
-            
+
             {/* Left Section: Contact Info */}
             <div className="text-left">
               {/* <h3 className="text-xl font-bold mb-3">Top Garden</h3> */}

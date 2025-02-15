@@ -10,7 +10,6 @@ require('colors');
 
 //for the api routes
 const reviewRoutes = require('./routes/reviewRoutes');
-const portfolioRoute = require('./routes/portfolioRoute');
 // const quoteRoutes = require('./routes/quoteRoutes');
 const path = require('path');
 
@@ -31,7 +30,6 @@ app.use(express.json());
 // Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/reviews', reviewRoutes); // Reviews routes (with prefix)
-app.use('/api/v1/portfolio', portfolioRoute);
 // app.use('/api/quotes', quoteRoutes);
 // Error Handling Middleware
 app.use(errorHandler);
