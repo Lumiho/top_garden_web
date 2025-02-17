@@ -67,7 +67,7 @@ function Home() {
           About Us
         </h2>
         <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto leading-relaxed">
-          With over a decade of experience in landscape design, construction, and irrigation, we bring passion, creativity, and expertise to every project.  
+          With over a decade of experience in landscape design, construction, and irrigation, we bring passion, creativity, and expertise to every project.
           Whether it's a serene backyard retreat, a vibrant garden oasis, or a functional, eco-friendly landscape, we craft outdoor spaces that inspire, rejuvenate, and connect people with nature.
         </p>
 
@@ -76,13 +76,13 @@ function Home() {
         </p>
 
         <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto mt-4 leading-relaxed">
-          Our expert team specializes in designing lush gardens, installing efficient irrigation systems, and curating tailored maintenance plans to ensure your outdoor haven thrives through every season.  
-          We take pride in using sustainable practices that not only enhance the beauty of your space but also contribute to a healthier environment.
+          Our expert team specializes in designing lush gardens, installing efficient irrigation systems, and curating tailored maintenance plans to ensure your outdoor haven thrives through every season.
+          We take pride in using sustainable practices that enhance the beauty of your space and contribute to a healthier environment.
         </p>
 
         <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto mt-4 leading-relaxed">
           From the gentle trickle of a perfectly placed water feature to the rich, green embrace of thoughtfully selected plants, every detail is designed with care and intention.
-          Let us bring your vision to life—where your dream landscape is more than a possibility, it’s a reality waiting to unfold.
+          Let us bring your vision to life.
         </p>
       </section>
 

@@ -46,15 +46,6 @@ process.on('SIGINT', async () => {
   process.exit(0);
 });
 
-//images
-
-// Middleware to serve static files
-app.use('/Media', express.static(path.join(__dirname, 'Media')));
-app.use((req, res, next) => {
-  console.log(`Incoming request: ${req.method} ${req.url}`);
-  next();
-});
-
 // Set the server port
 const PORT = process.env.PORT || 5000;
 
