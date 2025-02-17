@@ -98,6 +98,4 @@ function Reviews() {
       </div>
     </div>
   );
-}
-
-export default Reviews;
+} export default Reviews;

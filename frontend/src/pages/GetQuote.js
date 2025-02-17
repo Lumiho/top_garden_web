@@ -259,6 +259,4 @@ function GetQuote() {
       )}
     </div>
   );
-}
-
-export default GetQuote;
+} export default GetQuote;

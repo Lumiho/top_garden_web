@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
-// import Portfolio from "./pages/Portfolio";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
@@ -143,6 +142,4 @@ function App() {
       </div>
     </Router>
   );
-}
-
-export default App;
+} export default App;

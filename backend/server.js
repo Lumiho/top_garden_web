@@ -29,7 +29,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/reviews', reviewRoutes); // Reviews routes (with prefix)
+app.use('/api/v1/reviews', reviewRoutes);
 // app.use('/api/quotes', quoteRoutes);
 // Error Handling Middleware
 app.use(errorHandler);
