@@ -136,11 +136,10 @@ function App() {
           </div>
 
           {/* Copyright Notice */}
-          <div className="text-center pt-1">
+          <div className="text-center px-2 pt-1 ml-10">
             <p>© 2024 Top Garden. All rights reserved.</p>
           </div>
         </footer>
-
       </div>
     </Router>
   );
