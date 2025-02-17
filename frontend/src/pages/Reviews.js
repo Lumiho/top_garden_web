@@ -76,7 +76,7 @@ function Reviews() {
   ];
 
   return (
-    <div className="bg-[#F4F1DE] text-center py-12 px-6">
+    <div className="bg-[#F4F1DE] text-center py-16 px-6">
       <h2 className="text-4xl font-bold text-[#4A7A63] mb-4" style={{ textShadow: '.4px .4px 0px black' }}>
         Client Reviews
       </h2>

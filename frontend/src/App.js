@@ -30,7 +30,7 @@ function App() {
                 <img
                   src={TopGardenLogo}
                   alt="Top Garden Logo"
-                  className="w-auto h-16 mr-4 "
+                  className="w-auto h-20 mr-4 "
                 />
               </Link>
               <div className="text-5xl font-bold text-shadow text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform drop-shadow-xl">
@@ -47,7 +47,7 @@ function App() {
                 <li>
                   <Link
                     to="/"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
+                    className="text-[1.3rem] font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Home
                   </Link>
@@ -55,7 +55,7 @@ function App() {
                 <li>
                   <Link
                     to="/Reviews"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
+                    className="text-[1.3rem] font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Reviews
                   </Link>
@@ -63,7 +63,7 @@ function App() {
                 <li>
                   <Link
                     to="/get-quote"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
+                    className="text-[1.3rem] font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
                   >
                     Get a Quote
                   </Link>
@@ -89,7 +89,7 @@ function App() {
         </div>
 
         {/* Footer Section */}
-        <footer className="bg-black text-white py-7">
+        <footer className="bg-black text-white py-4">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-5">
 
             {/* Left Section: Contact Info */}
