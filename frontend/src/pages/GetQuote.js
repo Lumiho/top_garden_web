@@ -43,9 +43,6 @@ function GetQuote() {
   return (
     <div
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${try1})`,
-      }}
     >
       {/* Screen 1: Project Type */}
       {currentScreen === 1 && (
