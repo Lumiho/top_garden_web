@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import try1 from "../Media/try1.jpg";
 import irrigationImg from "../Media/irrigationImg.png";
 
 function GetQuote() {
