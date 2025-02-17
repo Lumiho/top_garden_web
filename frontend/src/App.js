@@ -6,6 +6,8 @@ import Reviews from "./pages/Reviews";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
+import TopGardenLogo2 from "./Media/top_garden.png";
+
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -28,7 +30,7 @@ function App() {
                 <img
                   src={TopGardenLogo}
                   alt="Top Garden Logo"
-                  className="w-16 h-14 mr-4 "
+                  className="w-auto h-16 mr-4 "
                 />
               </Link>
               <div className="text-5xl font-bold text-shadow text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform drop-shadow-xl">
@@ -106,9 +108,9 @@ function App() {
             {/* Center Section: Logo */}
             <div>
               <img
-                src={TopGardenLogo}
+                src={TopGardenLogo2}
                 alt="Top Garden Logo"
-                className="w-40 h-40 mr-10"
+                className="w-auto h-60 mr-12"
               />
             </div>
 
@@ -134,7 +136,7 @@ function App() {
           </div>
 
           {/* Copyright Notice */}
-          <div className="text-center mt-6 pt-4">
+          <div className="text-center pt-1">
             <p>© 2024 Top Garden. All rights reserved.</p>
           </div>
         </footer>
