@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import exampleImg from "../Media/irrigationImg.png";
 import slideshow1 from "../Media/slideshow1.jpg";
 import slideshow2 from "../Media/slideshow2.jpg";
 import slideshow3 from "../Media/slideshow3.jpg";
 import slideshow4 from "../Media/slideshow4.jpg";
-import slideshow5 from "../Media/slideshow5.JPG";
+import slideshow5 from "../Media/slideshow5.jpg";
 import { FaLeaf, FaHandsHelping, FaHeartbeat } from "react-icons/fa";
 
 function Home() {
@@ -62,16 +62,27 @@ function Home() {
       </section>
 
       {/* About Section */}
-      <section className="bg-[#F4F1DE] py-20 px-8 text-center">
-        <h2 className="text-5xl font-bold text-[#4A7A63] font-heading mb-8">
+      <section className="bg-[#F4F1DE] py-12 px-8 text-center">
+        <h2 className="text-5xl font-bold text-[#4A7A63] font-heading mb-6">
           About Us
         </h2>
-        <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto">
-          Welcome to Top Garden! We are a team of passionate landscaping and
-          irrigation experts dedicated to transforming outdoor spaces into
-          stunning dreamscapes. With over 10 years of experience in the
-          industry, we pride ourselves on delivering exceptional designs,
-          efficient irrigation systems, and tailored maintenance plans.
+        <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto leading-relaxed">
+          With over a decade of experience in landscape design, construction, and irrigation, we bring passion, creativity, and expertise to every project.  
+          Whether it's a serene backyard retreat, a vibrant garden oasis, or a functional, eco-friendly landscape, we craft outdoor spaces that inspire, rejuvenate, and connect people with nature.
+        </p>
+
+        <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto mt-4 leading-relaxed">
+          At Top Garden, we believe that landscapes should be more than just beautiful—they should be a harmonious blend of aesthetics, sustainability, and functionality.
+        </p>
+
+        <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto mt-4 leading-relaxed">
+          Our expert team specializes in designing lush gardens, installing efficient irrigation systems, and curating tailored maintenance plans to ensure your outdoor haven thrives through every season.  
+          We take pride in using sustainable practices that not only enhance the beauty of your space but also contribute to a healthier environment.
+        </p>
+
+        <p className="text-lg text-[#4A7A63] max-w-4xl mx-auto mt-4 leading-relaxed">
+          From the gentle trickle of a perfectly placed water feature to the rich, green embrace of thoughtfully selected plants, every detail is designed with care and intention.
+          Let us bring your vision to life—where your dream landscape is more than a possibility, it’s a reality waiting to unfold.
         </p>
       </section>
 
@@ -115,7 +126,7 @@ function Home() {
       {/* Horizontal Scrolling Image Gallery */}
       <section className="bg-[#F4F1DE] py-16 px-8 text-center">
         <h2 className="text-5xl font-bold text-[#4A7A63] font-heading mb-8">
-          Our Work
+          Work
         </h2>
 
         <div className="relative">

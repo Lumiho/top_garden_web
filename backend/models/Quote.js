@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
-
-// Define the schema for the "Get a Quote" form
 const quoteSchema = new mongoose.Schema(
   {
     projectType: {
       type: String,
       required: true,
-      enum: ["Landscaping", "Irrigation", "Design", "Maintenance"], // Limit to known project types
+      enum: ["Landscaping", "Irrigation", "Design", "Maintenance"], 
     },
     projectDetails: {
       name: {
@@ -50,7 +48,7 @@ const quoteSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // Automatically add createdAt and updatedAt fields
+    timestamps: true,
   }
 );
 
