@@ -91,8 +91,7 @@ function App() {
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-5">
 
             {/* Left Section: Contact Info */}
-            <div className="text-left">
-              {/* <h3 className="text-xl font-bold mb-3">Top Garden</h3> */}
+            <div className="text-left mt-10">
               <p className="mb-2 flex items-center">
                 <FaMapMarkerAlt className="mr-2" /> Remote, CA
               </p>
@@ -109,12 +108,12 @@ function App() {
               <img
                 src={TopGardenLogo}
                 alt="Top Garden Logo"
-                className="w-40 h-40"
+                className="w-40 h-40 mr-10"
               />
             </div>
 
             {/* Right Section: Social Media */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center mt-10">
               <div className="flex space-x-6">
                 <a
                   href="https://www.facebook.com/p/Top-Garden-Landscaping-Design-100070947193816"
