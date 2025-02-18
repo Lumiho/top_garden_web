@@ -100,7 +100,7 @@ function App() {
                 <FaPhoneAlt className="mr-2" /> (209) 263-9292
               </p>
               <p className="mb-2 flex items-center">
-                <FaEnvelope className="mr-2" /> info@topgarden.com
+                <FaEnvelope className="mr-2" /> tgardenl@yahoo.com
               </p>
             </div>
 
