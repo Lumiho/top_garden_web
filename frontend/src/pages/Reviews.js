@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Reviews() {
-  // Static reviews (no backend connection)
   const reviews = [
     {
       id: 1,
