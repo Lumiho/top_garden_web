@@ -94,7 +94,7 @@ function App() {
             {/* Left Section: Contact Info */}
             <div className="text-left mt-10">
               <p className="mb-2 flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> Remote, CA
+                <FaMapMarkerAlt className="mr-2" /> Northern California
               </p>
               <p className="mb-2 flex items-center">
                 <FaPhoneAlt className="mr-2" /> (209) 263-9292
