@@ -3,16 +3,16 @@ import google from "../Media/google.png"
 
 function Login() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#F4F1DE] px-4">
+    <div className="flex items-center justify-center min-h-screen bg-[#4A7A63] px-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
         <h2 className="text-2xl font-semibold text-[#4A7A63]">Welcome! Sign in to your Top Garden account</h2>
 
         {/* Email Input */}
         <div className="mt-6 text-left">
           <label className="block text-sm font-medium text-gray-700">Email</label>
-          <input 
-            type="email" 
-            placeholder="Enter your email address" 
+          <input
+            type="email"
+            placeholder="Enter your email address"
             className="mt-1 w-full p-3 border rounded-lg bg-[#F4F1DE] text-gray-900 focus:ring-2 focus:ring-[#4A7A63]"
           />
         </div>
@@ -20,9 +20,9 @@ function Login() {
         {/* Password Input */}
         <div className="mt-4 text-left">
           <label className="block text-sm font-medium text-gray-700">Password</label>
-          <input 
-            type="password" 
-            placeholder="Enter your password" 
+          <input
+            type="password"
+            placeholder="Enter your password"
             className="mt-1 w-full p-3 border rounded-lg bg-[#F4F1DE] text-gray-900 focus:ring-2 focus:ring-[#4A7A63]"
           />
         </div>

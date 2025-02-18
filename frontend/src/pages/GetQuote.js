@@ -42,7 +42,7 @@ function GetQuote() {
 
   return (
     <div
-      className="bg-[#F4F1DE] min-h-screen flex items-center justify-center bg-cover bg-center"
+      className="bg-[#4A7A63] min-h-screen flex items-center justify-center bg-cover bg-center"
     >
       {/* Screen 1: Project Type */}
       {currentScreen === 1 && (

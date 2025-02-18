@@ -21,7 +21,7 @@ function App() {
     <Router>
       <div className="App">
         {/* Header Section */}
-        <div className="fixed top-0 w-full z-50 h-25 bg-gradient-to-r from-[#4D8C66] to-[#4A7A63] shadow-lg">
+        <div className="fixed top-0 w-full z-50 h-25 bg-[#F4F1DE] shadow-lg">
           <header className="container mx-auto flex items-center justify-between px-8 py-6">
             {/* Left Section */}
             <div className="flex items-center justify-center space-x-2">
@@ -32,7 +32,7 @@ function App() {
                   className="w-auto h-16 mr-4 "
                 />
               </Link>
-              <div className="text-5xl font-bold text-shadow text-center text-[#F4F1DE] tracking-wide hover:scale-105 transition-transform drop-shadow-xl">
+              <div className="text-5xl font-bold text-shadow text-center text-[#4A7A63] tracking-wide hover:scale-105 transition-transform drop-shadow-xl">
                 <Link to="/" className="font-heading">
                   Top Garden
                 </Link>
@@ -45,7 +45,7 @@ function App() {
                 <li>
                   <Link
                     to="/"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
+                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F] transition-colors"
                   >
                     Home
                   </Link>
@@ -53,7 +53,7 @@ function App() {
                 <li>
                   <Link
                     to="/reviews"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
+                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F] transition-colors"
                   >
                     Reviews
                   </Link>
@@ -61,7 +61,7 @@ function App() {
                 <li>
                   <Link
                     to="/get-quote"
-                    className="text-lg font-medium text-[#F4F1DE] hover:text-[#E07A5F] transition-colors"
+                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F] transition-colors"
                   >
                     Get a Quote
                   </Link>
@@ -101,6 +101,9 @@ function App() {
               </p>
               <p className="mb-2 flex items-center">
                 <FaEnvelope className="mr-2" /> tgardenl@yahoo.com
+              </p>
+              <p className="mb-2 flex items-center">
+                <FaEnvelope className="mr-2" /> CL#1092124
               </p>
             </div>
 

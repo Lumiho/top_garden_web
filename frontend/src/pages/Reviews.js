@@ -75,11 +75,11 @@ function Reviews() {
   ];
 
   return (
-    <div className="bg-[#F4F1DE] text-center py-16 px-6">
-      <h2 className="text-4xl font-bold text-[#4A7A63] mb-4" style={{ textShadow: '.4px .4px 0px black' }}>
+    <div className="bg-[#4A7A63] text-center py-16 px-6">
+      <h2 className="text-4xl font-bold text-[#F4F1DE] mb-4" style={{ textShadow: '.4px .4px 0px black' }}>
         Client Reviews
       </h2>
-      <p className="text-lg text-[#4A7A63] mb-8" style={{ textShadow: '.1px .1px 0px darkgreen' }}>
+      <p className="text-lg text-[#F4F1DE] mb-8" style={{ textShadow: '.1px .1px 0px darkgreen' }}>
         Here's what our clients have to say about us. Verified through the app Angi.
       </p>
 
@@ -98,3 +98,5 @@ function Reviews() {
     </div>
   );
 } export default Reviews;
+
+// 
