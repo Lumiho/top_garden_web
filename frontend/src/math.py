@@ -8,8 +8,8 @@ class estimateCost():
     def calculation(self, area, irrigation, mulch, sod, turf, cleanup):
         cost = 0
         # sod/turf have no irrigation option
-        if sod or turf or not irrigation: cost += 2*area
-        elif irrigation: cost += 4.25*area
+        if sod or not irrigation: cost += 2*area
+        elif turf and irrigation: cost += 4.25*area
         
         if mulch: cost += 5*area
         if cleanup: cost += 5*area
