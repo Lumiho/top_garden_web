@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import irrigationImg from "../Media/irrigationImg.png";
+import slideshow1 from "../Media/slideshow1.jpg";
+import slideshow2 from "../Media/slideshow2.jpg";
+import slideshow4 from "../Media/slideshow4.jpg";
+import slideshow5 from "../Media/slideshow5.jpg";
+// import estimateCalculation from "../math.py"
+import MaterialSelector from "../materials_select"
 
 function GetQuote() {
   const [currentScreen, setCurrentScreen] = useState(1);
@@ -23,10 +28,10 @@ function GetQuote() {
   const handleBack = () => setCurrentScreen((prev) => prev - 1);
 
   const projectTypes = [
-    { name: "Landscaping", image: irrigationImg },
-    { name: "Irrigation", image: irrigationImg },
-    { name: "Design", image: irrigationImg },
-    { name: "Maintenance", image: irrigationImg },
+    { name: "Landscaping", image: slideshow4 },
+    { name: "Irrigation", image: slideshow2 },
+    { name: "Design", image: slideshow5 },
+    { name: "Maintenance", image: slideshow1 },
   ];
 
   const handleFormSubmit = async () => {
@@ -88,6 +93,7 @@ function GetQuote() {
       )}
 
       {/* Screen 2: Project Details */}
+
       {currentScreen === 2 && (
         <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-2xl w-full min-h-[60vh] min-w-[50vw]">
           <h2 className="text-3xl font-bold text-white mb-6 text-center">
@@ -155,7 +161,7 @@ function GetQuote() {
                   },
                 })
               }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] text-white"
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] text-[#709c86]"
             >
               <option value="" disabled>
                 Select Materials
@@ -166,6 +172,7 @@ function GetQuote() {
               <option value="Stones">Stones</option>
               <option value="Paving Blocks">Paving Blocks</option>
             </select>
+            {/* <MaterialSelector formData={formData} setFormData={setFormData} /> */}
           </div>
           <div className="relative mb-7">
             <input
