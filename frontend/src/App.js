@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
 import Login from "./pages/Login";
+import Signup from "./pages/SignUp";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
@@ -72,6 +73,11 @@ function App() {
                       Login
                     </button>
                   </Link>
+                  <Link to="/Signup">
+                    <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
+                      Sign Up
+                    </button>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -84,14 +90,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
-            <Route path="/login" element={<Login />} /> {/* ✅ Added this */}
+            <Route path="/login" element={<Login />} /> 
+            <Route path="/signup" element={<Signup />} /> 
           </Routes>
         </div>
 
         {/* Footer Section */}
         <footer className="bg-black text-white py-7">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-5">
-            {/* Left Section: Contact Info */}
             <div className="text-left mt-10">
               <p className="mb-2 flex items-center">
                 <FaMapMarkerAlt className="mr-2" /> Northern California
@@ -107,7 +113,6 @@ function App() {
               </p>
             </div>
 
-            {/* Center Section: Logo */}
             <div>
               <img
                 src={TopGardenLogo2}
@@ -116,7 +121,6 @@ function App() {
               />
             </div>
 
-            {/* Right Section: Social Media */}
             <div className="flex flex-col items-center mt-10">
               <div className="flex space-x-6">
                 <a
