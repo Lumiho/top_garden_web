@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient'; // make sure this path is correct for your project
+import { supabase } from '../supabaseClient'; 
 
 function Signup() {
   const [fullName, setFullName] = useState('');
@@ -9,6 +9,7 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    console.log("📨 Signup submitted with:", { fullName, email, password });
 
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
