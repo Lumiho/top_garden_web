@@ -79,8 +79,8 @@ function App() {
                 <li>
                   <Link
                     to="/get-quote"
-                    onClick={() => setNavOpen(false)}
-                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
+                    onClick={() => setNavOpen(false)}// bg-[#E07A5F] text-white px-4 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform
+                    className="text-lg font-medium text-white bg-[#E07A5F] px-4 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform"
                   >
                     Get a Quote
                   </Link>
