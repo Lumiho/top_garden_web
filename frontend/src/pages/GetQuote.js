@@ -4,8 +4,9 @@ import slideshow1 from "../Media/slideshow1.jpg";
 import slideshow2 from "../Media/slideshow2.jpg";
 import slideshow4 from "../Media/slideshow4.jpg";
 import slideshow5 from "../Media/slideshow5.jpg";
-// import estimateCalculation from "../math.py"
-import MaterialSelector from "../materials_select"
+import Calculator from "../utils/Calculator"
+
+// import MaterialSelector from "../materials_select"
 
 function GetQuote() {
   const [currentScreen, setCurrentScreen] = useState(1);
@@ -96,101 +97,7 @@ function GetQuote() {
 
       {currentScreen === 2 && (
         <div className="p-6 bg-[#1A1A1A] rounded-lg shadow-lg max-w-2xl w-full min-h-[60vh] min-w-[50vw]">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">
-            Project Details
-          </h2>
-          <div className="relative mb-7">
-            <input
-              type="text"
-              placeholder="Project Name"
-              value={formData.projectDetails.name}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  projectDetails: {
-                    ...formData.projectDetails,
-                    name: e.target.value,
-                  },
-                })
-              }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
-            />
-          </div>
-          <div className="relative mb-7">
-            <input
-              type="number"
-              placeholder="Square Footage (e.g., 500)"
-              value={formData.projectDetails.squareFootage}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  projectDetails: {
-                    ...formData.projectDetails,
-                    squareFootage: e.target.value,
-                  },
-                })
-              }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] placeholder-gray-400 text-white"
-            />
-          </div>
-          <div className="relative mb-7">
-            <input
-              type="date"
-              value={formData.projectDetails.completionDate}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  projectDetails: {
-                    ...formData.projectDetails,
-                    completionDate: e.target.value,
-                  },
-                })
-              }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
-            />
-          </div>
-          <div className="relative mb-7">
-            <select
-              value={formData.projectDetails.materials}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  projectDetails: {
-                    ...formData.projectDetails,
-                    materials: e.target.value,
-                  },
-                })
-              }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#4A7A63] to-[#709c86] focus:outline-none focus:ring-2 focus:ring-[#4A7A63] text-[#709c86]"
-            >
-              <option value="" disabled>
-                Select Materials
-              </option>
-              <option value="Gravel">Gravel</option>
-              <option value="Soil">Soil</option>
-              <option value="Turf/Grass">Turf/Grass</option>
-              <option value="Stones">Stones</option>
-              <option value="Paving Blocks">Paving Blocks</option>
-            </select>
-            {/* <MaterialSelector formData={formData} setFormData={setFormData} /> */}
-          </div>
-          <div className="relative mb-7">
-            <input
-              type="text"
-              placeholder="Budget (e.g., $1000 - $5000)"
-              value={formData.projectDetails.budget}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  projectDetails: {
-                    ...formData.projectDetails,
-                    budget: e.target.value,
-                  },
-                })
-              }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
-            />
-          </div>
+          <Calculator />
           <div className="flex justify-between">
             <button
               onClick={handleBack}
