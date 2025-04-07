@@ -1,9 +1,9 @@
-import React from "react";
+// import Login from "./pages/Login";
+// import Signup from "./pages/SignUp";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
-import Login from "./pages/Login";
-import Signup from "./pages/SignUp";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
@@ -18,35 +18,51 @@ import {
 } from "react-icons/fa";
 
 function App() {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <Router>
       <div className="App">
         {/* Header Section */}
-        <div className="fixed top-0 w-full z-50 h-25 bg-[#F4F1DE] shadow-lg">
+        <div className="fixed top-0 w-full z-50 bg-[#F4F1DE] shadow-lg">
           <header className="container mx-auto flex items-center justify-between px-8 py-6">
             {/* Left Section */}
-            <div className="flex items-center justify-center space-x-2">
+            <div className="flex items-center space-x-2">
               <Link to="/" className="hover:scale-110 transition-transform">
                 <img
                   src={TopGardenLogo}
                   alt="Top Garden Logo"
-                  className="w-auto h-16 mr-4 "
+                  className="w-auto h-16 mr-4"
                 />
               </Link>
-              <div className="text-5xl font-bold text-shadow text-center text-[#4A7A63] tracking-wide hover:scale-105 transition-transform drop-shadow-xl">
+              <div className="text-4xl md:text-5xl font-bold text-[#4A7A63] hover:scale-105 transition-transform drop-shadow-xl">
                 <Link to="/" className="font-heading">
                   Top Garden
                 </Link>
               </div>
             </div>
 
+            {/* Hamburger Icon */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setNavOpen(!navOpen)}
+                className="text-[#4A7A63] text-3xl focus:outline-none"
+              >
+                ☰
+              </button>
+            </div>
+
             {/* Right Navigation */}
-            <nav>
-              <ul className="flex space-x-6">
+            <nav
+              className={`flex-col md:flex md:flex-row md:items-center absolute md:static top-[100%] left-0 w-full md:w-auto bg-[#F4F1DE] md:bg-transparent px-8 md:px-0 transition-all duration-300 ease-in-out ${navOpen ? "flex" : "hidden"
+                }`}
+            >
+              <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 py-4 md:py-0">
                 <li>
                   <Link
                     to="/"
-                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F] transition-colors"
+                    onClick={() => setNavOpen(false)}
+                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
                   >
                     Home
                   </Link>
@@ -54,7 +70,8 @@ function App() {
                 <li>
                   <Link
                     to="/reviews"
-                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F] transition-colors"
+                    onClick={() => setNavOpen(false)}
+                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
                   >
                     Reviews
                   </Link>
@@ -62,22 +79,11 @@ function App() {
                 <li>
                   <Link
                     to="/get-quote"
-                    button className="bg-[#E07A5F] text-white px-4 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform"
+                    onClick={() => setNavOpen(false)}
+                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
                   >
                     Get a Quote
                   </Link>
-                </li>
-                <li>
-                  {/* <Link to="/login">
-                    <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
-                      Login
-                    </button>
-                  </Link> */}
-                  {/* <Link to="/Signup">
-                    <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
-                      Sign Up
-                    </button>
-                  </Link> */}
                 </li>
               </ul>
             </nav>
@@ -85,13 +91,11 @@ function App() {
         </div>
 
         {/* Main Content */}
-        <div className="pt-20">
+        <div className="pt-28">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
-            {/* <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} /> */}
           </Routes>
         </div>
 
