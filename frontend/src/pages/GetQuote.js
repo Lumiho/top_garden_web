@@ -6,8 +6,6 @@ import slideshow4 from "../Media/slideshow4.jpg";
 import slideshow5 from "../Media/slideshow5.jpg";
 import Calculator from "../utils/Calculator"
 
-// import MaterialSelector from "../materials_select"
-
 function GetQuote() {
   const [currentScreen, setCurrentScreen] = useState(1);
   const [formData, setFormData] = useState({

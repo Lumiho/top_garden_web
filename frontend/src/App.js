@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
-import Login from "./pages/Login";
-import Signup from "./pages/SignUp";
+// import Login from "./pages/Login";
+// import Signup from "./pages/SignUp";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
@@ -67,18 +67,20 @@ function App() {
                     Get a Quote
                   </Link>
                 </li>
+                {/* 
                 <li>
                   <Link to="/login">
                     <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
                       Login
                     </button>
                   </Link>
-                  <Link to="/Signup">
+                  <Link to="/signup">
                     <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
                       Sign Up
                     </button>
                   </Link>
                 </li>
+                */}
               </ul>
             </nav>
           </header>
@@ -90,8 +92,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
-            <Route path="/login" element={<Login />} /> 
-            <Route path="/signup" element={<Signup />} /> 
+            {/* <Route path="/login" element={<Login />} /> */}
+            {/* <Route path="/signup" element={<Signup />} /> */}
           </Routes>
         </div>
 
