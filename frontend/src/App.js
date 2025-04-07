@@ -1,5 +1,7 @@
 // import Login from "./pages/Login";
 // import Signup from "./pages/SignUp";
+// import Login from "./pages/Login";
+// import Signup from "./pages/SignUp";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
@@ -19,6 +21,15 @@ import {
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
+
+  // 👇 Captions for image gallery in Home
+  const galleryCaptions = [
+    "Maintenance",
+    "Irrigation",
+    "Maintenance",
+    "Landscaping",
+    "Design",
+  ];
 
   return (
     <Router>
@@ -93,7 +104,7 @@ function App() {
         {/* Main Content */}
         <div className="pt-28">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home captions={galleryCaptions} />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
           </Routes>

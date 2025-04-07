@@ -9,29 +9,30 @@ import { FaLeaf, FaHandsHelping, FaHeartbeat } from "react-icons/fa";
 
 function Home() {
   const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
+  const captions = ["Maintenance", "Irrigation", "Maintenance", "Landscaping", "Design"];
+  const doubledImages = [...images, ...images];
   const scrollRef = useRef(null);
+  const galleryRef = useRef(null);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    let isScrolling = false;
 
-    const startAutoScroll = () => {
-      if (!isScrolling) {
-        isScrolling = true;
-        scrollContainer.scrollLeft += 2;
-        if (
-          scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-          scrollContainer.scrollWidth
-        ) {
+    const autoScroll = () => {
+      if (scrollContainer) {
+        scrollContainer.scrollLeft += 1;
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         }
-        isScrolling = false;
       }
     };
 
-    const interval = setInterval(startAutoScroll, 30);
+    const interval = setInterval(autoScroll, 20);
     return () => clearInterval(interval);
   }, []);
+
+  const handleExploreClick = () => {
+    galleryRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="flex flex-col min-h-screen font-body">
@@ -48,7 +49,10 @@ function Home() {
             Turning your outdoor spaces into dreamscapes.
           </p>
           <div className="flex justify-center gap-6 mt-6 flex-wrap">
-            <button className="bg-[#4A7A63] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#E07A5F] hover:scale-105">
+            <button
+              onClick={handleExploreClick}
+              className="bg-[#4A7A63] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#E07A5F] hover:scale-105"
+            >
               Explore Plans
             </button>
             <button
@@ -61,7 +65,7 @@ function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Us Section (Restored) */}
       <section className="bg-[#F4F1DE] py-12 px-6 md:px-8 text-center">
         <h2 className="text-5xl font-bold text-[#4A7A63] font-heading mb-6">
           About Us
@@ -80,7 +84,7 @@ function Home() {
         </p>
       </section>
 
-      {/* Core Values Section */}
+      {/* Core Values Section (Restored) */}
       <section className="bg-[#E07A5F] py-20 px-6 md:px-8 text-center rounded-lg shadow-lg">
         <h2 className="text-5xl font-bold text-white font-heading mb-8">
           Our Core Values
@@ -115,25 +119,28 @@ function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="bg-[#F4F1DE] py-16 px-6 md:px-8 text-center">
+      <section
+        ref={galleryRef}
+        className="bg-[#F4F1DE] py-16 px-6 md:px-8 text-center"
+      >
         <h2 className="text-5xl font-bold text-[#4A7A63] font-heading mb-8">
           Past Work
         </h2>
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto space-x-6 scrollbar-hide snap-x snap-mandatory px-4 py-6"
+            className="flex overflow-x-hidden space-x-6 scrollbar-hide px-4 py-6"
           >
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="shrink-0 snap-center transition-transform duration-500 ease-in-out hover:scale-105"
-              >
+            {doubledImages.map((image, index) => (
+              <div key={index} className="shrink-0 text-center">
                 <img
                   src={image}
                   alt={`Gallery Image ${index + 1}`}
                   className="h-[300px] sm:h-[400px] w-[250px] sm:w-[300px] object-cover rounded-xl shadow-lg"
                 />
+                <p className="mt-2 text-[#4A7A63] font-semibold">
+                  {captions[index % captions.length]}
+                </p>
               </div>
             ))}
           </div>
