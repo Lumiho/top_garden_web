@@ -150,12 +150,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <section className="bg-[#F4F1DE] py-16 px-8 text-center">
-        <button className="bg-[#4A7A63] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#E07A5F] hover:scale-105">
-          Get a Quote
-        </button>
-      </section>
     </div>
   );
 } export default Home;

@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
-// import Login from "./pages/Login";
-// import Signup from "./pages/SignUp";
+import Login from "./pages/Login";
+import Signup from "./pages/SignUp";
 import GetQuote from "./pages/GetQuote";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
@@ -62,25 +62,23 @@ function App() {
                 <li>
                   <Link
                     to="/get-quote"
-                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F] transition-colors"
+                    button className="bg-[#E07A5F] text-white px-4 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform"
                   >
                     Get a Quote
                   </Link>
                 </li>
-                {/* 
                 <li>
-                  <Link to="/login">
+                  {/* <Link to="/login">
                     <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
                       Login
                     </button>
-                  </Link>
-                  <Link to="/signup">
+                  </Link> */}
+                  {/* <Link to="/Signup">
                     <button className="bg-[#E07A5F] text-white px-6 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform">
                       Sign Up
                     </button>
-                  </Link>
+                  </Link> */}
                 </li>
-                */}
               </ul>
             </nav>
           </header>
@@ -92,8 +90,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
-            {/* <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/signup" element={<Signup />} /> */}
+            {/* <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} /> */}
           </Routes>
         </div>
 
@@ -111,7 +109,7 @@ function App() {
                 <FaEnvelope className="mr-2" /> tgardenl@yahoo.com
               </p>
               <p className="mb-2 flex items-center">
-                <FaEnvelope className="mr-2" /> CL#1092124
+                CL#1092124
               </p>
             </div>
 
