@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 import exampleImg from "../Media/irrigationImg.png";
 import slideshow1 from "../Media/slideshow1.jpg";
 import slideshow2 from "../Media/slideshow2.jpg";
@@ -9,7 +10,7 @@ import { FaLeaf, FaHandsHelping, FaHeartbeat } from "react-icons/fa";
 
 function Home() {
   const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
-  const captions = ["Maintenance", "Irrigation", "Maintenance", "Landscaping", "Design"];
+  const captions = ["Plant Selection", "Irrigation", "Maintenance", "Landscaping", "Design"];
   const doubledImages = [...images, ...images];
   const scrollRef = useRef(null);
   const galleryRef = useRef(null);
@@ -83,7 +84,7 @@ function Home() {
           From the gentle trickle of a perfectly placed water feature to the rich, green embrace of thoughtfully selected plants, every detail is designed with care and intention. Let us bring your vision to life.
         </p>
         <div className="text-xl font-medium text-white font-medium mt-7">
-          <a href="./GetQuote" className="bg-[#E07A5F] px-4 py-1 rounded-xl hover:bg-[#4A7A63] hover:scale-105 transition-transform"> Click Here to Begin</a>
+          <Link to="/get-quote" className="bg-[#E07A5F] px-4 py-1 rounded-xl hover:bg-[#4A7A63] hover:scale-105 transition-transform"> Click Here to Begin</Link>
         </div>
       </section>
 
@@ -127,7 +128,7 @@ function Home() {
         className="bg-[#F4F1DE] py-16 px-6 md:px-8 text-center"
       >
         <h2 className="text-5xl font-bold text-[#4A7A63] font-heading mb-8">
-          Past Work
+          Services
         </h2>
         <div className="relative overflow-hidden">
           <div

@@ -1,88 +1,160 @@
-import React, { useState } from "react";
+import React from "react";
 import { estimator } from "./cost";
 
-const Calculator = () => {
-    const [projectName, setProjectName] = useState("");
-    const [budget, setBudget] = useState("");
-    const [area, setArea] = useState("");
-    const [turf_irrigation, setTurfIrrigation] = useState(false);
-    const [mulch, setMulch] = useState(false);
-    const [turf_or_sod, setTurfOrSod] = useState(false);
-    const [cleanup, setCleanup] = useState(false);
-    const [totalCost, setTotalCost] = useState(null);
+export function formatPhoneNumber(value) {
+    const cleaned = ('' + value).replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+    if (match) {
+        let result = '';
+        if (match[1]) result += '(' + match[1];
+        if (match[2]) result += ') ' + match[2];
+        if (match[3]) result += '-' + match[3];
+        return result;
+    }
+    return value;
+}
+
+const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
+    const handleChange = (field, value) => {
+        setFormData({
+            ...formData,
+            projectDetails: {
+                ...formData.projectDetails,
+                [field]: value,
+            },
+        });
+    };
 
     const calculateCost = () => {
-        const parsedArea = parseFloat(area);
-        if (isNaN(parsedArea) || parsedArea <= 0) {
-            alert("Please enter a valid area");
+        const { name, squareFootage, budget, completionDate, materials } = formData.projectDetails;
+        const area = parseFloat(squareFootage);
+        const parsedBudget = parseFloat(budget);
+
+        if (!name || name.trim() === "") {
+            alert("Please enter a project name");
             return;
         }
-        const parsedBudget = parseFloat(budget);
+
+        if (!completionDate) {
+            alert("Please select an expected completion date");
+            return;
+        }
+
+        if (!materials || materials.trim() === "") {
+            alert("Please describe the materials desired");
+            return;
+        }
+
+        if (isNaN(area) || area <= 0) {
+            alert("Please enter a valid square footage (greater than 0)");
+            return;
+        }
+
         if (isNaN(parsedBudget) || parsedBudget <= 0) {
-            alert("Please enter a valid budget");
+            alert("Please enter a valid budget (greater than 0)");
             return;
         }
 
         const cost = estimator.Calculation({
-            area: parsedArea || 0,
-            turf_irrigation,
-            mulch,
-            turf_or_sod,
-            cleanup,
+            area,
+            turf_irrigation: formData.projectDetails.turf_irrigation || false,
+            mulch: formData.projectDetails.mulch || false,
+            turf_or_sod: formData.projectDetails.turf_or_sod || false,
+            cleanup: formData.projectDetails.cleanup || false,
         });
-        setTotalCost(cost);
+
+        setFormData({
+            ...formData,
+            projectDetails: {
+                ...formData.projectDetails,
+                estimatedCost: cost,
+            },
+        });
+    };
+
+    const toggleOption = (field) => {
+        setFormData({
+            ...formData,
+            projectDetails: {
+                ...formData.projectDetails,
+                [field]: !formData.projectDetails[field],
+            },
+        });
     };
 
     return (
         <div className="max-w-md mx-auto bg-white p-5 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-2">Cost Estimator</h2>
+            <h2 className="text-2xl font-semibold mb-4">Project Details</h2>
             <input
                 type="text"
-                placeholder="Enter project name"
+                placeholder="Project Name"
+                value={formData.projectDetails.name}
+                onChange={(e) => handleChange("name", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
-                onChange={(e) => setProjectName(e.target.value)}
             />
             <input
                 type="number"
-                placeholder="Enter budget ($USD)"
+                placeholder="Square Footage"
+                value={formData.projectDetails.squareFootage}
+                onChange={(e) => handleChange("squareFootage", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
-                onChange={(e) => setBudget(e.target.value)}
+            />
+            <input
+                type="date"
+                placeholder="Expected Completion Date"
+                value={formData.projectDetails.completionDate}
+                onChange={(e) => handleChange("completionDate", e.target.value)}
+                className="w-full border p-2 rounded mb-3"
+            />
+            <input
+                type="text"
+                placeholder="Materials Desired"
+                value={formData.projectDetails.materials}
+                onChange={(e) => handleChange("materials", e.target.value)}
+                className="w-full border p-2 rounded mb-3"
             />
             <input
                 type="number"
-                placeholder="Enter area (sq ft)"
+                placeholder="Budget ($USD)"
+                value={formData.projectDetails.budget}
+                onChange={(e) => handleChange("budget", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
-                onChange={(e) => setArea(e.target.value)}
+            />
+            <textarea
+                placeholder="Additional Comments"
+                value={formData.projectDetails.comments}
+                onChange={(e) => handleChange("comments", e.target.value)}
+                className="w-full border p-2 rounded mb-3"
             />
 
             <div className="space-y-2">
-                {[
-                    { label: "Turf (with Irrigation)", state: turf_irrigation, setter: setTurfIrrigation },
-                    { label: "Mulch", state: mulch, setter: setMulch },
-                    { label: "Turf (no Irrigation) or Sod", state: turf_or_sod, setter: setTurfOrSod },
-                    { label: "Cleanup", state: cleanup, setter: setCleanup },
-                ].map((item) => (
+                {["turf_irrigation", "mulch", "turf_or_sod", "cleanup"].map((field) => (
                     <button
-                        key={item.label}
-                        onClick={() => item.setter(!item.state)}
-                        className={`w-full px-4 py-2 rounded transition ${item.state ? "bg-[#4A7A63] text-white" : "bg-gray-300"
-                            }`}
+                        key={field}
+                        onClick={() => toggleOption(field)}
+                        className={`w-full px-4 py-2 rounded transition ${formData.projectDetails[field] ? "bg-[#4A7A63] text-white" : "bg-gray-300"}`}
                     >
-                        {item.label}: {item.state ? "Yes" : "No"}
+                        {field.replace(/_/g, " ")}: {formData.projectDetails[field] ? "Yes" : "No"}
                     </button>
                 ))}
             </div>
+            <div className="flex justify-center mt-4">
 
-            <button
-                onClick={calculateCost}
-                className="w-full bg-[#E07A5F] text-white px-4 py-2 mt-4 rounded hover:bg-[#4A7A63]">
-                Calculate Cost
-            </button>
+                <button
+                    onClick={() => {
+                        // You can still calculate estimatedCost here before confirming
 
-            {totalCost !== null && (
-                <p className="text-lg font-bold mt-4">Estimated Cost*: ${totalCost} for Project {projectName}</p>
-            )}
-            <h3 className="text-small font-semibold mb-1">*Actual Price May Vary</h3>
+                        // Then trigger confirmation + next screen
+                        setConfirmed(true);
+                        setTimeout(() => {
+                            handleNext();
+                        }, 1000);
+                    }}
+                    className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
+                >
+                    Confirm
+                </button>
+            </div>
         </div>
     );
 };

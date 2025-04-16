@@ -1,12 +1,9 @@
-// import Login from "./pages/Login";
-// import Signup from "./pages/SignUp";
-// import Login from "./pages/Login";
-// import Signup from "./pages/SignUp";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Reviews from "./pages/Reviews";
 import GetQuote from "./pages/GetQuote";
+import ThankYou from "./pages/ThankYou";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
 import TopGardenLogo2 from "./Media/top_garden.png";
@@ -107,6 +104,7 @@ function App() {
             <Route path="/" element={<Home captions={galleryCaptions} />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/get-quote" element={<GetQuote />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </div>
 
