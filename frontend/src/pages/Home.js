@@ -42,7 +42,7 @@ function Home() {
         className="relative bg-cover bg-center bg-no-repeat h-[75vh] sm:h-[85vh] md:h-[90vh] flex items-center justify-center"
         style={{ backgroundImage: `url(${exampleImg})` }}
       >
-        <div className="bg-gray-800/70 rounded-xl mx-4 md:ml-8 mr-auto mt-20 md:mt-40 p-6 md:p-8 text-center max-w-2xl shadow-lg">
+        <div className="bg-gray-800/70 rounded-xl mx-4 md:ml-6 mr-auto mt-20 md:mt-40 p-6 md:p-8 text-center max-w-2xl shadow-lg">
           <h1 className="text-3xl md:text-5xl font-bold font-heading text-white mb-4">
             Welcome to Top Garden
           </h1>

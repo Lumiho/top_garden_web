@@ -133,7 +133,7 @@ function App() {
               <img
                 src={TopGardenLogo2}
                 alt="Top Garden Logo"
-                className="w-auto h-60 mr-12"
+                className="w-auto h-60 mr-8"
               />
             </div>
 
@@ -158,7 +158,7 @@ function App() {
           </div>
 
           {/* Copyright Notice */}
-          <div className="text-center pt-1 ml-9">
+          <div className="text-center pt-1 ml-7">
             <p>© 2024 Top Garden. All rights reserved.</p>
           </div>
         </footer>
