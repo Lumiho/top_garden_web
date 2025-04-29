@@ -35,7 +35,7 @@ function App() {
         <div className="fixed top-0 w-full z-50 bg-[#F4F1DE] shadow-lg">
           <header className="container mx-auto flex items-center justify-between px-8 py-6">
             {/* Left Section */}
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0">
               <Link to="/" className="hover:scale-110 transition-transform">
                 <img
                   src={TopGardenLogo}
@@ -43,7 +43,7 @@ function App() {
                   className="w-auto h-16 mr-3"
                 />
               </Link>
-              <div className="text-4xl md:text-5xl font-bold text-[#4A7A63] hover:scale-105 transition-transform drop-shadow-[0_1px_1px_rgba(0,0,0,.5)]">
+<div className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-[#4A7A63] ...">
                 <Link to="/" className="font-heading">
                   Top Garden
                 </Link>
