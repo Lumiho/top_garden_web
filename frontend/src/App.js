@@ -33,72 +33,70 @@ function App() {
       <div className="App">
         {/* Header Section */}
         <div className="fixed top-0 w-full z-50 bg-[#F4F1DE] shadow-lg">
-          <header className="container mx-auto flex items-center justify-between px-8 py-6">
-            {/* Left Section */}
-            <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0">
-              <Link to="/" className="hover:scale-110 transition-transform">
-                <img
-                  src={TopGardenLogo}
-                  alt="Top Garden Logo"
-                  className="w-auto h-16 scale-115 md:scale-125 transform mr-2"
-                />
-              </Link>
-<div className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-[#4A7A63] ...">
-                <Link to="/" className="font-heading">
-                  Top Garden
-                </Link>
-                <div className="md:text-xl text-[#E07A5F] italic mt-1 ml-2">
-                     Landscaping & Design
-                </div>
-              </div>
-            </div>
+          <header className="container mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between md:items-center text-center md:text-left">
+  {/* Logo + Title */}
+  <div className="flex flex-col items-center md:flex-row md:space-x-4 space-y-1 md:space-y-0">
+    <Link to="/" className="hover:scale-110 transition-transform">
+      <img
+        src={TopGardenLogo}
+        alt="Top Garden Logo"
+        className="w-auto h-16 scale-115 md:scale-125 transform"
+      />
+    </Link>
+    <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#4A7A63] text-center md:text-left">
+      <Link to="/" className="font-heading">Top Garden</Link>
+      <div className="md:text-xl text-[#E07A5F] italic mt-1 md:ml-2">
+        Landscaping & Design
+      </div>
+    </div>
+  </div>
 
-            {/* Hamburger Icon */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setNavOpen(!navOpen)}
-                className="text-[#4A7A63] text-3xl focus:outline-none"
-              >
-                ☰
-              </button>
-            </div>
+  {/* Hamburger Icon */}
+  <div className="md:hidden mt-3">
+    <button
+      onClick={() => setNavOpen(!navOpen)}
+      className="text-[#4A7A63] text-3xl focus:outline-none"
+    >
+      ☰
+    </button>
+  </div>
 
-            {/* Right Navigation */}
-            <nav
-              className={`flex-col md:flex md:flex-row md:items-center absolute md:static top-[100%] left-0 w-full md:w-auto bg-[#F4F1DE] md:bg-transparent px-8 md:px-0 transition-all duration-300 ease-in-out ${navOpen ? "flex" : "hidden"
-                }`}
-            >
-              <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 py-4 md:py-0">
-                <li>
-                  <Link
-                    to="/"
-                    onClick={() => setNavOpen(false)}
-                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/reviews"
-                    onClick={() => setNavOpen(false)}
-                    className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
-                  >
-                    Reviews
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/get-quote"
-                    onClick={() => setNavOpen(false)}// bg-[#E07A5F] text-white px-4 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform
-                    className="text-lg font-medium text-white bg-[#E07A5F] px-4 py-1 rounded-xl font-medium hover:bg-[#4A7A63] hover:scale-105 transition-transform"
-                  >
-                    Get a Quote
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
+  {/* Navigation */}
+  <nav
+    className={`flex-col md:flex md:flex-row md:items-center absolute md:static top-[100%] left-0 w-full md:w-auto bg-[#F4F1DE] md:bg-transparent px-8 md:px-0 transition-all duration-300 ease-in-out ${navOpen ? "flex" : "hidden"}`}
+  >
+    <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 py-4 md:py-0">
+      <li>
+        <Link
+          to="/"
+          onClick={() => setNavOpen(false)}
+          className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
+        >
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/reviews"
+          onClick={() => setNavOpen(false)}
+          className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
+        >
+          Reviews
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/get-quote"
+          onClick={() => setNavOpen(false)}
+          className="text-lg font-medium text-white bg-[#E07A5F] px-4 py-1 rounded-xl hover:bg-[#4A7A63] hover:scale-105 transition-transform"
+        >
+          Get a Quote
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</header>
+
         </div>
 
         {/* Main Content */}
