@@ -40,7 +40,7 @@ function App() {
                 <img
                   src={TopGardenLogo}
                   alt="Top Garden Logo"
-                  className="w-auto h-16 mr-2"
+                  className="w-auto h-16 scale-115 md:scale-125 transform mr-2"
                 />
               </Link>
 <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-[#4A7A63] ...">
@@ -133,7 +133,7 @@ function App() {
               <img
                 src={TopGardenLogo2}
                 alt="Top Garden Logo"
-                className="w-auto h-60 mr-8"
+                className="w-auto h-60 mr-5"
               />
             </div>
 
@@ -159,7 +159,7 @@ function App() {
 
           {/* Copyright Notice */}
           <div className="text-center pt-1 ml-7">
-            <p>© 2024 Top Garden. All rights reserved.</p>
+            <p>© 2024-2025 Top Garden. All rights reserved.</p>
           </div>
         </footer>
       </div>
