@@ -43,12 +43,15 @@ function App() {
         className="w-auto h-16 scale-115 md:scale-125 transform"
       />
     </Link>
-    <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#4A7A63] text-center md:text-left">
-      <Link to="/" className="font-heading">Top Garden</Link>
-      <div className="md:text-xl text-[#E07A5F] italic mt-1 md:ml-2">
-        Landscaping & Design
-      </div>
-    </div>
+<div className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#4A7A63] text-center md:text-left">
+  <Link to="/" className="font-heading">
+    Top Garden
+  </Link>
+  <div className="text-sm sm:text-base md:text-xl text-[#E07A5F] italic mt-1 md:ml-2">
+    Landscaping & Design
+  </div>
+</div>
+
   </div>
 
   {/* Hamburger Icon */}

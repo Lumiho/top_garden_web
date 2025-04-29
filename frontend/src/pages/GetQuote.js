@@ -37,40 +37,81 @@ function GetQuote() {
     { name: "Other", image: slideshow5 },
   ];
 
-  const handleFormSubmit = async () => {
-    const payload = {
-      data: {
-        projectType: formData.projectType,
-        projectName: formData.projectDetails.name,
-        squareFootage: formData.projectDetails.squareFootage,
-        completionDate: formData.projectDetails.completionDate,
-        materials: formData.projectDetails.materials,
-        budget: formData.projectDetails.budget,
-        estimatedCost: formData.projectDetails.estimatedCost,
-        comments: formData.projectDetails.comments,
-        fullName: formData.userDetails.fullName,
-        email: formData.userDetails.email,
-        phone: formData.userDetails.phone,
-      },
-    };
+const handleFormSubmit = async () => {
+  // Basic field checks
+  const { projectDetails, userDetails, projectType } = formData;
 
-    try {
-      const response = await fetch("https://sheetdb.io/api/v1/hupsghi5dzep2", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+  if (!projectType) {
+    alert("Please select a project type.");
+    return;
+  }
 
-      if (response.ok) {
-        navigate("/thank-you");
-      } else {
-        alert("Failed to submit quote. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting to SheetDB:", error);
-      alert("Something went wrong. Please try again.");
-    }
+  if (
+    !projectDetails.name ||
+    !projectDetails.squareFootage ||
+    !projectDetails.completionDate ||
+    !projectDetails.materials ||
+    !projectDetails.budget ||
+    !userDetails.fullName ||
+    !userDetails.email ||
+    !userDetails.phone
+  ) {
+    alert("Please fill out all required fields.");
+    return;
+  }
+
+  if (isNaN(projectDetails.budget)) {
+    alert("Please enter a valid number for the budget.");
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(userDetails.email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  const digitsOnly = userDetails.phone.replace(/\D/g, '');
+  if (digitsOnly.length < 10) {
+    alert("Please enter a valid phone number with at least 10 digits.");
+    return;
+  }
+
+  // If validations pass, proceed
+  const payload = {
+    data: {
+      projectType: formData.projectType,
+      projectName: formData.projectDetails.name,
+      squareFootage: formData.projectDetails.squareFootage,
+      completionDate: formData.projectDetails.completionDate,
+      materials: formData.projectDetails.materials,
+      budget: formData.projectDetails.budget,
+      estimatedCost: formData.projectDetails.estimatedCost,
+      comments: formData.projectDetails.comments,
+      fullName: formData.userDetails.fullName,
+      email: formData.userDetails.email,
+      phone: formData.userDetails.phone,
+    },
   };
+
+  try {
+    const response = await fetch("https://sheetdb.io/api/v1/hupsghi5dzep2", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (response.ok) {
+      navigate("/thank-you");
+    } else {
+      alert("Failed to submit quote. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error submitting to SheetDB:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
 
   return (
     <div className="bg-[#4A7A63] min-h-screen flex items-center justify-center bg-cover bg-center">
