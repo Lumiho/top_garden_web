@@ -33,8 +33,8 @@ function GetQuote() {
   const projectTypes = [
     { name: "Landscaping", image: slideshow4 },
     { name: "Irrigation", image: slideshow2 },
-    { name: "Design", image: slideshow5 },
     { name: "Maintenance", image: slideshow1 },
+    { name: "Other", image: slideshow5 },
   ];
 
   const handleFormSubmit = async () => {
@@ -108,8 +108,6 @@ function GetQuote() {
             handleNext={handleNext}
           />
 
-
-          {/* Message shown ONLY when confirmed is true */}
           {confirmed && (
             <div className="text-green-400 text-center mt-4 font-semibold transition-opacity duration-300">
               Information confirmed!
@@ -125,17 +123,6 @@ function GetQuote() {
               className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600 transition-transform transform hover:scale-105"
             >
               Back
-            </button>
-            <button
-              onClick={() => {
-                setConfirmed(true); // show message
-                setTimeout(() => {
-                  handleNext(); // then go to next screen
-                }, 1000);
-              }}
-              className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
-            >
-              Confirm
             </button>
           </div>
         </div>

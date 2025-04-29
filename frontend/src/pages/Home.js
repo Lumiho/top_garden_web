@@ -84,7 +84,7 @@ function Home() {
           From the gentle trickle of a perfectly placed water feature to the rich, green embrace of thoughtfully selected plants, every detail is designed with care and intention. Let us bring your vision to life.
         </p>
         <div className="text-xl font-medium text-white font-medium mt-7">
-          <Link to="/get-quote" className="bg-[#E07A5F] px-4 py-1 rounded-xl hover:bg-[#4A7A63] hover:scale-105 transition-transform"> Click Here to Begin</Link>
+          <Link to="/get-quote" className="bg-[#4A7A63] px-4 py-1 rounded-xl hover:bg-[#E07A5F] hover:scale-105 transition-transform"> Click Here to Begin</Link>
         </div>
       </section>
 

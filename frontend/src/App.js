@@ -40,13 +40,16 @@ function App() {
                 <img
                   src={TopGardenLogo}
                   alt="Top Garden Logo"
-                  className="w-auto h-16 mr-4"
+                  className="w-auto h-16 mr-3"
                 />
               </Link>
-              <div className="text-4xl md:text-5xl font-bold text-[#4A7A63] hover:scale-105 transition-transform drop-shadow-xl">
+              <div className="text-4xl md:text-5xl font-bold text-[#4A7A63] hover:scale-105 transition-transform drop-shadow-[0_1px_1px_rgba(0,0,0,.5)]">
                 <Link to="/" className="font-heading">
                   Top Garden
                 </Link>
+                <div className="md:text-xl text-[#E07A5F] italic mt-1 ml-8">
+                     Landscaping & Design
+                </div>
               </div>
             </div>
 
