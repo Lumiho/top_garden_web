@@ -112,56 +112,61 @@ function App() {
         </div>
 
         {/* Footer Section */}
-        <footer className="bg-black text-white py-7">
-          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-5">
-            <div className="text-left mt-10">
-              <p className="mb-2 flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> Northern California
-              </p>
-              <p className="mb-2 flex items-center">
-                <FaPhoneAlt className="mr-2" /> (209) 263-9292
-              </p>
-              <p className="mb-2 flex items-center">
-                <FaEnvelope className="mr-2" /> tgardenl@yahoo.com
-              </p>
-              <p className="mb-2 flex items-center">
-                CL#1092124
-              </p>
-            </div>
+<footer className="bg-black text-white py-7">
+  <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-5 text-center md:text-left">
+    
+    {/* Left: Contact Info */}
+    <div className="w-full md:w-1/3 mb-6 md:mb-0">
+      <p className="mb-2 flex justify-center md:justify-start items-center">
+        <FaMapMarkerAlt className="mr-2" /> Northern California
+      </p>
+      <p className="mb-2 flex justify-center md:justify-start items-center">
+        <FaPhoneAlt className="mr-2" /> (209) 263-9292
+      </p>
+      <p className="mb-2 flex justify-center md:justify-start items-center">
+        <FaEnvelope className="mr-2" /> tgardenl@yahoo.com
+      </p>
+      <p className="mb-2 flex justify-center md:justify-start items-center">
+        CL#1092124
+      </p>
+    </div>
 
-            <div>
-              <img
-                src={TopGardenLogo2}
-                alt="Top Garden Logo"
-                className="w-auto h-60 mr-5"
-              />
-            </div>
+    {/* Center: Logo */}
+    <div className="w-full md:w-1/3 flex justify-center mb-6 md:mb-0">
+      <img
+        src={TopGardenLogo2}
+        alt="Top Garden Logo"
+        className="w-auto h-60"
+      />
+    </div>
 
-            <div className="flex flex-col items-center mt-10">
-              <div className="flex space-x-6">
-                <a
-                  href="https://www.facebook.com/p/Top-Garden-Landscaping-Design-100070947193816"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaFacebookF className="text-[#4267B2] text-4xl cursor-pointer hover:scale-110 transition-transform" />
-                </a>
-                <a
-                  href="https://www.instagram.com/topgarden_landscaping"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaInstagram className="text-[#E4405F] text-4xl cursor-pointer hover:scale-110 transition-transform" />
-                </a>
-              </div>
-            </div>
-          </div>
+    {/* Right: Social Links */}
+    <div className="w-full md:w-1/3 flex justify-center md:justify-end mb-6 md:mb-0">
+      <div className="flex space-x-6">
+        <a
+          href="https://www.facebook.com/p/Top-Garden-Landscaping-Design-100070947193816"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebookF className="text-[#4267B2] text-4xl cursor-pointer hover:scale-110 transition-transform" />
+        </a>
+        <a
+          href="https://www.instagram.com/topgarden_landscaping"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram className="text-[#E4405F] text-4xl cursor-pointer hover:scale-110 transition-transform" />
+        </a>
+      </div>
+    </div>
+  </div>
 
-          {/* Copyright Notice */}
-          <div className="text-center pt-1 ml-7">
-            <p>© 2024-2025 Top Garden. All rights reserved.</p>
-          </div>
-        </footer>
+  {/* Copyright */}
+  <div className="text-center pt-1">
+    <p>© 2024-2025 Top Garden. All rights reserved.</p>
+  </div>
+</footer>
+
       </div>
     </Router>
   );
