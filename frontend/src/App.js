@@ -33,25 +33,22 @@ function App() {
       <div className="App">
         {/* Header Section */}
         <div className="fixed top-0 w-full z-50 bg-[#F4F1DE] shadow-lg">
-          <header className="container mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between md:items-center text-center md:text-left">
+          <header className="container mx-auto px-4 py-2 md:px-6 md:py-4 flex flex-col items-center md:flex-row md:justify-between md:items-center text-center md:text-left">
   {/* Logo + Title */}
   <div className="flex flex-col items-center md:flex-row md:space-x-4 space-y-1 md:space-y-0">
     <Link to="/" className="hover:scale-110 transition-transform">
       <img
         src={TopGardenLogo}
         alt="Top Garden Logo"
-        className="w-auto h-16 scale-115 md:scale-125 transform"
+        className="w-auto h-14 scale-110 md:h-16 md:scale-125 transform"
       />
     </Link>
-<div className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#4A7A63] text-center md:text-left">
-  <Link to="/" className="font-heading">
-    Top Garden
-  </Link>
-  <div className="text-sm sm:text-base md:text-xl text-[#E07A5F] italic mt-1 md:ml-2">
-    Landscaping & Design
-  </div>
-</div>
-
+    <div className="text-xl sm:text-2xl md:text-5xl font-bold text-[#4A7A63] text-center md:text-left">
+      <Link to="/" className="font-heading">Top Garden</Link>
+      <div className="text-xs sm:text-sm md:text-xl text-[#E07A5F] italic mt-1 md:ml-2">
+        Landscaping & Design
+      </div>
+    </div>
   </div>
 
   {/* Hamburger Icon */}
@@ -66,7 +63,9 @@ function App() {
 
   {/* Navigation */}
   <nav
-    className={`flex-col md:flex md:flex-row md:items-center absolute md:static top-[100%] left-0 w-full md:w-auto bg-[#F4F1DE] md:bg-transparent px-8 md:px-0 transition-all duration-300 ease-in-out ${navOpen ? "flex" : "hidden"}`}
+    className={`flex-col md:flex md:flex-row md:items-center absolute md:static top-[100%] left-0 w-full md:w-auto bg-[#F4F1DE] md:bg-transparent px-8 md:px-0 transition-all duration-300 ease-in-out ${
+      navOpen ? "flex" : "hidden"
+    }`}
   >
     <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 py-4 md:py-0">
       <li>
@@ -99,6 +98,7 @@ function App() {
     </ul>
   </nav>
 </header>
+
 
         </div>
 
