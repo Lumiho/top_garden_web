@@ -99,12 +99,16 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 onChange={(e) => handleChange("squareFootage", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
             />
+              <label className="block text-sm text-black ml-1">
+            Choose a Completion Date
+                </label>
             <input
                 type="date"
                 placeholder="Expected Completion Date"
                 value={formData.projectDetails.completionDate}
                 onChange={(e) => handleChange("completionDate", e.target.value)}
-                className="w-full px-4 py-2 bg-white text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E07A5F]"            />
+                className="bg-white text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] mb-2"
+            />
             <input
                 type="text"
                 placeholder="Materials Desired"
