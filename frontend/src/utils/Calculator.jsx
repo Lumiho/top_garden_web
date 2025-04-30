@@ -104,7 +104,7 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 placeholder="Expected Completion Date"
                 value={formData.projectDetails.completionDate}
                 onChange={(e) => handleChange("completionDate", e.target.value)}
-                className="w-full border p-2 rounded mb-3"
+  className="w-full px-4 py-2 bg-white text-black border-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#E07A5F]"
             />
             <input
                 type="text"
