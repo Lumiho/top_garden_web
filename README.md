@@ -1,13 +1,13 @@
 # 🌿 Top Garden Website
-Full-stack website for Top Garden Landscaping & Design, providing seamless landscaping solutions.
+Front-End website for Top Garden Landscaping & Design, providing seamless landscaping solutions.
 
 
 ## 🛠 Tech Stack
 
 | Frontend          | Backend      | Database   | Styling         |
 |------------------|------------|-----------|----------------|
-| ⚛️ ReactJS      | 🚀 Node.js  | 🍃 MongoDB | 🎨 TailwindCSS  |
-| 🌐 React Router | 🛠 Express.js | 🔄 Mongoose | ✨ Custom UI Components |
+| ⚛️ ReactJS      | 🚀 Node.js  | 🍃 Google | 🎨 TailwindCSS  |
+| 🌐 React Router | 🛠 Express.js |  Sheets API | ✨ Custom UI Components |
 
 
 ## 📸 Preview
