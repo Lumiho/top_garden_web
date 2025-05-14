@@ -6,8 +6,8 @@ Front-End website for Top Garden Landscaping & Design, providing seamless landsc
 
 | Frontend          | Backend      | Database   | Styling         |
 |------------------|------------|-----------|----------------|
-| ⚛️ ReactJS      | 🚀 Node.js  | 🍃 Google | 🎨 TailwindCSS  |
-| 🌐 React Router | 🛠 Express.js |  Sheets API | ✨ Custom UI Components |
+| ⚛️ ReactJS      | 🚀 Node.js  | 🍃 Google Sheets API | 🎨 TailwindCSS  |
+| 🌐 React Router | 🛠 Express.js | n/a | ✨ Custom UI Components |
 
 
 ## 📸 Preview
