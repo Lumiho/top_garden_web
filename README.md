@@ -26,25 +26,7 @@ Clone the repository:
 https://github.com/Lumiho/top_garden_web
 ```
 ### Backend
-1️⃣ Navigate to backend folder
-```bash
-cd backend
-```
-
-2️⃣ Install dependencies
-```bash
-npm install
-```
-3️⃣ Start server
-```bash
-npm start
-```
-
-### Frontend
-1️⃣ Navigate to frontend folder
-```bash
-cd frontend
-```
+n/a
 
 2️⃣ Install dependencies
 ```bash
