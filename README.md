@@ -28,6 +28,11 @@ https://github.com/Lumiho/top_garden_web
 ### Backend
 n/a
 
+### Frontend
+1️⃣ Navigate to frontend folder
+```bash
+cd frontend
+```
 2️⃣ Install dependencies
 ```bash
 npm install
@@ -35,4 +40,3 @@ npm install
 3️⃣ Run React app
 ```bash
 npm start
-```
