@@ -48,7 +48,7 @@ const handleFormSubmit = async () => {
 
   if (
     !projectDetails.name ||
-    !projectDetails.squareFootage ||
+    //!projectDetails.squareFootage ||
     !projectDetails.completionDate ||
     !projectDetails.materials ||
     !projectDetails.budget ||

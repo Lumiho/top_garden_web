@@ -45,7 +45,7 @@ function App() {
     </Link>
     <div className="text-xl sm:text-2xl md:text-5xl font-bold text-[#4A7A63] text-center md:text-left">
       <Link to="/" className="font-heading">Top Garden</Link>
-      <div className="text-xs sm:text-sm md:text-xl text-[#E07A5F] italic mt-1 md:ml-2">
+      <div className="text-xs sm:text-sm md:text-xl text-[#C9B078] italic mt-1 md:ml-2"> {/* Ez07A5F */}
         Landscaping & Design
       </div>
     </div>
@@ -72,7 +72,7 @@ function App() {
         <Link
           to="/"
           onClick={() => setNavOpen(false)}
-          className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
+          className="text-lg font-medium text-[#4A7A63] hover:text-[#C9B078]"
         >
           Home
         </Link>
@@ -81,16 +81,15 @@ function App() {
         <Link
           to="/reviews"
           onClick={() => setNavOpen(false)}
-          className="text-lg font-medium text-[#4A7A63] hover:text-[#E07A5F]"
+          className="text-lg font-medium text-[#4A7A63] hover:text-[#C9B078]"
         >
           Reviews
         </Link>
       </li>
       <li>
         <Link
-          to="/get-quote"
           onClick={() => setNavOpen(false)}
-          className="text-lg font-medium text-white bg-[#E07A5F] px-4 py-1 rounded-xl hover:bg-[#4A7A63] hover:scale-105 transition-transform"
+          className="text-lg font-medium text-white bg-[#C9B078] px-4 py-1 rounded-xl hover:bg-[#4A7A63] hover:scale-105 transition-transform"
         >
           Get a Quote
         </Link>

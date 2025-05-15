@@ -52,12 +52,12 @@ function Home() {
           <div className="flex justify-center gap-6 mt-6 flex-wrap">
             <button
               onClick={handleExploreClick}
-              className="bg-[#4A7A63] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#E07A5F] hover:scale-105"
+              className="bg-[#4A7A63] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#C9B078] hover:scale-105"
             >
               Explore Plans
             </button>
             <button
-              className="bg-[#E07A5F] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#4A7A63] hover:scale-105"
+              className="bg-[#C9B078] text-white px-6 py-2 rounded-lg text-lg font-medium transition-transform hover:bg-[#4A7A63] hover:scale-105"
               onClick={() => (window.location.href = "tel:2092639292")}
             >
               Contact Us
@@ -84,12 +84,12 @@ function Home() {
           From the gentle trickle of a perfectly placed water feature to the rich, green embrace of thoughtfully selected plants, every detail is designed with care and intention. Let us bring your vision to life.
         </p>
         <div className="text-xl font-medium text-white font-medium mt-7">
-          <Link to="/get-quote" className="bg-[#4A7A63] px-4 py-1 rounded-xl hover:bg-[#E07A5F] hover:scale-105 transition-transform"> Click Here to Begin</Link>
+          <Link to="/get-quote" className="bg-[#4A7A63] px-4 py-1 rounded-xl hover:bg-[#C9B078] hover:scale-105 transition-transform"> Click Here to Begin</Link>
         </div>
       </section>
 
       {/* Core Values Section (Restored) */}
-      <section className="bg-[#E07A5F] py-20 px-6 md:px-8 text-center rounded-lg shadow-lg">
+      <section className="bg-[#C9B078] py-20 px-6 md:px-8 text-center rounded-lg shadow-lg">
         <h2 className="text-5xl font-bold text-white font-heading mb-8">
           Our Core Values
         </h2>
