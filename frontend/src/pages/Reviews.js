@@ -86,7 +86,7 @@ function Reviews() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {reviews.map((review) => (
           <div key={review.id} className="border rounded-lg p-6 shadow-lg bg-white transition-transform hover:scale-105">
-            <h3 className="text-xl font-bold text-[#E07A5F]">{review.name}</h3>
+            <h3 className="text-xl font-bold text-[#C9B078]">{review.name}</h3>
             <p className="text-[#4A7A63] italic mt-1">{review.description}</p>
             <p className="text-[#4A7A63] mt-2">{review.review}</p>
             <div className="mt-4">
@@ -98,3 +98,5 @@ function Reviews() {
     </div>
   );
 } export default Reviews;
+
+{/*E07A5F old color */}
