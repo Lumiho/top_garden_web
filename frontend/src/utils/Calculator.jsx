@@ -146,7 +146,6 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 <button
                     onClick={() => {
                         // You can still calculate estimatedCost here before confirming
-
                         // Then trigger confirmation + next screen
                         setConfirmed(true);
                         setTimeout(() => {

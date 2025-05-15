@@ -52,7 +52,7 @@ const handleFormSubmit = async () => {
     !userDetails.fullName ||
     !userDetails.phone
   ) {
-    alert("Please fill out all required fields.");
+    alert("Please fill out all required fields (name, budget, phone)");
     return;
   }
 
