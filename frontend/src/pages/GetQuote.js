@@ -48,11 +48,8 @@ const handleFormSubmit = async () => {
 
   if (
     !projectDetails.name ||
-    !projectDetails.completionDate ||
-    !projectDetails.materials ||
     !projectDetails.budget ||
     !userDetails.fullName ||
-    !userDetails.email ||
     !userDetails.phone
   ) {
     alert("Please fill out all required fields.");
@@ -191,7 +188,7 @@ const handleFormSubmit = async () => {
           <div className="relative mb-6">
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Email (optional)"
               value={formData.userDetails.email}
               onChange={(e) =>
                 setFormData({

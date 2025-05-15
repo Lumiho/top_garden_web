@@ -94,7 +94,7 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
             />
             <input
                 type="number"
-                placeholder="Square Footage"
+                placeholder="Square Footage (optional)"
                 value={formData.projectDetails.squareFootage}
                 onChange={(e) => handleChange("squareFootage", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
@@ -111,7 +111,7 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
             />
             <input
                 type="text"
-                placeholder="Materials Desired"
+                placeholder="Materials Desired (optional)"
                 value={formData.projectDetails.materials}
                 onChange={(e) => handleChange("materials", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
