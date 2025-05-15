@@ -124,16 +124,16 @@ const handleFormSubmit = async () => {
               <div
                 key={type.name}
                 onClick={() => setFormData({ ...formData, projectType: type.name })}
-                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${formData.projectType === type.name ? "border-4 border-[#E07A5F] shadow-lg" : "hover:shadow-lg hover:shadow-[#4A7A63]/50"}`}
+                className={`relative rounded-lg overflow-hidden cursor-pointer text-center text-white shadow-md ${formData.projectType === type.name ? "border-4 border-[#C9B078] shadow-lg" : "hover:shadow-lg hover:shadow-[#4A7A63]/50"}`}
               >
                 <img src={type.image} alt={type.name} className="w-full h-32 object-cover" />
-                <div className={`absolute inset-0 flex items-center justify-center ${formData.projectType === type.name ? "bg-[#E07A5F]/60" : "bg-black/40"}`}>
+                <div className={`absolute inset-0 flex items-center justify-center ${formData.projectType === type.name ? "bg-[#C9B078]/60" : "bg-black/40"}`}>
                   <h3 className="font-bold text-lg">{type.name}</h3>
                 </div>
               </div>
             ))}
           </div>
-          <button onClick={handleNext} className="mt-6 w-full bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 rounded-lg hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105">
+          <button onClick={handleNext} className="mt-6 w-full bg-gradient-to-r from-[#C9B078] to-[#d46653] text-white py-2 rounded-lg hover:shadow-lg hover:shadow-[#C9B078]/50 transition-transform transform hover:scale-105">
             Next
           </button>
         </div>
@@ -185,7 +185,7 @@ const handleFormSubmit = async () => {
                   },
                 })
               }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#C9B078] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#C9B078] placeholder-gray-400 text-white"
             />
           </div>
           <div className="relative mb-6">
@@ -199,7 +199,7 @@ const handleFormSubmit = async () => {
                   userDetails: { ...formData.userDetails, email: e.target.value },
                 })
               }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#C9B078] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#C9B078] placeholder-gray-400 text-white"
             />
           </div>
           <div className="relative mb-6">
@@ -216,7 +216,7 @@ const handleFormSubmit = async () => {
                   },
                 })
               }
-              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#E07A5F] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] placeholder-gray-400 text-white"
+              className="w-full px-4 py-2 bg-transparent border-2 rounded-2xl border-gradient-to-r from-[#C9B078] to-[#F4A261] focus:outline-none focus:ring-2 focus:ring-[#C9B078] placeholder-gray-400 text-white"
             />
           </div>
 
@@ -224,7 +224,7 @@ const handleFormSubmit = async () => {
             <button onClick={handleBack} className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600 transition-transform transform hover:scale-105">
               Back
             </button>
-            <button onClick={handleFormSubmit} className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105">
+            <button onClick={handleFormSubmit} className="bg-gradient-to-r from-[#C9B078] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#C9B078]/50 transition-transform transform hover:scale-105">
               Submit Quote
             </button>
           </div>
