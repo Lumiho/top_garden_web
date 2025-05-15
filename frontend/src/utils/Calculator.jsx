@@ -107,7 +107,7 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 placeholder="Expected Completion Date"
                 value={formData.projectDetails.completionDate}
                 onChange={(e) => handleChange("completionDate", e.target.value)}
-                className="bg-white text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] mb-2"
+                className="bg-white text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9B078] mb-2"
             />
             <input
                 type="text"
@@ -153,7 +153,7 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                             handleNext();
                         }, 1000);
                     }}
-                    className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
+                    className="bg-gradient-to-r from-[#C9B078] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#C9B078]/50 transition-transform transform hover:scale-105"
                 >
                     Confirm
                 </button>
