@@ -1,13 +1,13 @@
 # 🌿 Top Garden Website
-Full-stack website for Top Garden Landscaping & Design, providing seamless landscaping solutions.
+Front-End website for Top Garden Landscaping & Design, providing seamless landscaping solutions.
 
 
 ## 🛠 Tech Stack
 
 | Frontend          | Backend      | Database   | Styling         |
 |------------------|------------|-----------|----------------|
-| ⚛️ ReactJS      | 🚀 Node.js  | 🍃 MongoDB | 🎨 TailwindCSS  |
-| 🌐 React Router | 🛠 Express.js | 🔄 Mongoose | ✨ Custom UI Components |
+| ⚛️ ReactJS      | 🚀 Node.js  | 🍃 Google Sheets API | 🎨 TailwindCSS  |
+| 🌐 React Router | 🛠 Express.js | n/a | ✨ Custom UI Components |
 
 
 ## 📸 Preview
@@ -26,26 +26,13 @@ Clone the repository:
 https://github.com/Lumiho/top_garden_web
 ```
 ### Backend
-1️⃣ Navigate to backend folder
-```bash
-cd backend
-```
-
-2️⃣ Install dependencies
-```bash
-npm install
-```
-3️⃣ Start server
-```bash
-npm start
-```
+n/a
 
 ### Frontend
 1️⃣ Navigate to frontend folder
 ```bash
 cd frontend
 ```
-
 2️⃣ Install dependencies
 ```bash
 npm install
@@ -53,4 +40,3 @@ npm install
 3️⃣ Run React app
 ```bash
 npm start
-```

@@ -94,7 +94,7 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
             />
             <input
                 type="number"
-                placeholder="Square Footage"
+                placeholder="Square Footage (optional)"
                 value={formData.projectDetails.squareFootage}
                 onChange={(e) => handleChange("squareFootage", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
@@ -107,11 +107,11 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 placeholder="Expected Completion Date"
                 value={formData.projectDetails.completionDate}
                 onChange={(e) => handleChange("completionDate", e.target.value)}
-                className="bg-white text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] mb-2"
+                className="bg-white text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9B078] mb-2"
             />
             <input
                 type="text"
-                placeholder="Materials Desired"
+                placeholder="Materials Desired (optional)"
                 value={formData.projectDetails.materials}
                 onChange={(e) => handleChange("materials", e.target.value)}
                 className="w-full border p-2 rounded mb-3"
@@ -146,14 +146,13 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 <button
                     onClick={() => {
                         // You can still calculate estimatedCost here before confirming
-
                         // Then trigger confirmation + next screen
                         setConfirmed(true);
                         setTimeout(() => {
                             handleNext();
                         }, 1000);
                     }}
-                    className="bg-gradient-to-r from-[#E07A5F] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#E07A5F]/50 transition-transform transform hover:scale-105"
+                    className="bg-gradient-to-r from-[#C9B078] to-[#d46653] text-white py-2 px-4 rounded hover:shadow-lg hover:shadow-[#C9B078]/50 transition-transform transform hover:scale-105"
                 >
                     Confirm
                 </button>
