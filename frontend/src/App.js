@@ -6,7 +6,6 @@ import GetQuote from "./pages/GetQuote";
 import ThankYou from "./pages/ThankYou";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
-import TopGardenLogo2 from "./Media/top_garden.png";
 import TGLD from "./Media/TGLD.png"
 
 import {
@@ -134,11 +133,11 @@ function App() {
     </div>
 
     {/* Center: Logo */}
-    <div className="w-full md:w-1/3 flex justify-center mb-6 md:mb-0">
+    <div className="w-full md:w-1/3 flex justify-center md:mb-0">
       <img
         src={TGLD}
         alt="Top Garden Logo"
-        className="w-auto h-60"
+        className="w-80 h-auto"
       />
     </div>
 
