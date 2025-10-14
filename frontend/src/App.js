@@ -8,9 +8,6 @@ import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
 import TGLD from "./Media/TGLD.png";
 
-const LOCATION = 'Northern California';
-const EMAIL = 'service@TGLD.org';
-const PHONE = '(209) 263-9292';
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -18,6 +15,10 @@ import {
   FaFacebookF,
   FaInstagram,
 } from "react-icons/fa";
+
+const LOCATION = 'Northern California';
+const EMAIL = 'service@TGLD.org';
+const PHONE = '(209) 263-9292';
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
