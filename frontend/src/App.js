@@ -7,7 +7,7 @@ import ThankYou from "./pages/ThankYou";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
 import TGLD from "./Media/TGLD.png"
-
+const EMAIL = 'service@TGLD.org'
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -125,7 +125,7 @@ function App() {
         <FaPhoneAlt className="mr-2" /> (209) 263-9292
       </p>
       <p className="mb-2 flex justify-center md:justify-start items-center">
-        <FaEnvelope className="mr-2" /> tgardenl@yahoo.com
+        <FaEnvelope className="mr-2" /> {EMAIL}
       </p>
       <p className="mb-2 flex justify-center md:justify-start items-center">
         CL#1092124
