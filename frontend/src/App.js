@@ -6,8 +6,11 @@ import GetQuote from "./pages/GetQuote";
 import ThankYou from "./pages/ThankYou";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
-import TGLD from "./Media/TGLD.png"
-const EMAIL = 'service@TGLD.org'
+import TGLD from "./Media/TGLD.png";
+
+const LOCATION = 'Northern California';
+const EMAIL = 'service@TGLD.org';
+const PHONE = '(209) 263-9292';
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -119,10 +122,10 @@ function App() {
     {/* Left: Contact Info */}
     <div className="w-full md:w-1/3 mb-6 md:mb-0">
       <p className="mb-2 flex justify-center md:justify-start items-center">
-        <FaMapMarkerAlt className="mr-2" /> Northern California
+        <FaMapMarkerAlt className="mr-2" /> {LOCATION}
       </p>
       <p className="mb-2 flex justify-center md:justify-start items-center">
-        <FaPhoneAlt className="mr-2" /> (209) 263-9292
+        <FaPhoneAlt className="mr-2" /> {PHONE}
       </p>
       <p className="mb-2 flex justify-center md:justify-start items-center">
         <FaEnvelope className="mr-2" /> {EMAIL}
