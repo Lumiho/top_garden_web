@@ -137,12 +137,14 @@ function App() {
     </div>
 
     {/* Center: Logo */}
-    <div className="w-full md:w-1/3 flex justify-center md:mb-0">
-      <img
-        src={TGLD}
-        alt="Top Garden Logo"
-        className="w-80 h-auto"
-      />
+    <div className="w-full md:w-1/2 flex justify-center md:mb-0">
+      <div className="bg-white p-5 rounded-lg">
+        <img
+          src={TGLD}
+          alt="Top Garden Logo"
+          className="w-full max-w-md md:w-[26rem] md:max-w-none h-auto"
+        />
+      </div>
     </div>
 
     {/* Right: Social Links */}
@@ -168,7 +170,7 @@ function App() {
 
   {/* Copyright */}
   <div className="text-center pt-1">
-    <p>© 2024-2025 Top Garden. All rights reserved.</p>
+    <p>© 2024-2026 Top Garden. All rights reserved.</p>
   </div>
 </footer>
 
