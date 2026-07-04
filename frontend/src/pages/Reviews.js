@@ -97,6 +97,7 @@ function Reviews() {
       </div>
     </div>
   );
-} export default Reviews;
+}
 
-{/*E07A5F old color */}
+// E07A5F old color
+export default Reviews;

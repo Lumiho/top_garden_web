@@ -32,27 +32,27 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
 
         if (!name || name.trim() === "") {
             alert("Please enter a project name");
-            return;
+            return false;
         }
 
         if (!completionDate) {
             alert("Please select an expected completion date");
-            return;
+            return false;
         }
 
         if (!materials || materials.trim() === "") {
             alert("Please describe the materials desired");
-            return;
+            return false;
         }
 
         if (isNaN(area) || area <= 0) {
             alert("Please enter a valid square footage (greater than 0)");
-            return;
+            return false;
         }
 
         if (isNaN(parsedBudget) || parsedBudget <= 0) {
             alert("Please enter a valid budget (greater than 0)");
-            return;
+            return false;
         }
 
         const cost = estimator.Calculation({
@@ -70,6 +70,8 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
                 estimatedCost: cost,
             },
         });
+
+        return true;
     };
 
     const toggleOption = (field) => {
@@ -145,7 +147,8 @@ const Calculator = ({ formData, setFormData, setConfirmed, handleNext }) => {
 
                 <button
                     onClick={() => {
-                        // You can still calculate estimatedCost here before confirming
+                        // Validate + compute estimatedCost before confirming
+                        if (!calculateCost()) return;
                         // Then trigger confirmation + next screen
                         setConfirmed(true);
                         setTimeout(() => {

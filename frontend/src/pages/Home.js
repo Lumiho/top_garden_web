@@ -139,7 +139,7 @@ function Home() {
               <div key={index} className="shrink-0 text-center">
                 <img
                   src={image}
-                  alt={`Gallery Image ${index + 1}`}
+                  alt={`Gallery ${index + 1}`}
                   className="h-[300px] sm:h-[400px] w-[250px] sm:w-[300px] object-cover rounded-xl shadow-lg"
                 />
                 <p className="mt-2 text-[#4A7A63] font-semibold">
