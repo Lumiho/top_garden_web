@@ -6,7 +6,7 @@ import GetQuote from "./pages/GetQuote";
 import ThankYou from "./pages/ThankYou";
 import "./index.css";
 import TopGardenLogo from "./Media/topgarden_logo.png";
-import TGLD from "./Media/TGLD.png";
+import TGLD from "./Media/TGLD.jpg";
 
 import {
   FaMapMarkerAlt,
@@ -138,13 +138,12 @@ function App() {
 
     {/* Center: Logo */}
     <div className="w-full md:w-1/2 flex justify-center md:mb-0">
-      <div className="bg-white p-5 rounded-lg">
         <img
           src={TGLD}
           alt="Top Garden Logo"
           className="w-full max-w-md md:w-[26rem] md:max-w-none h-auto"
         />
-      </div>
+      
     </div>
 
     {/* Right: Social Links */}
