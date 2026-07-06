@@ -137,7 +137,7 @@ function App() {
     </div>
 
     {/* Center: Logo */}
-    <div className="w-full md:w-1/2 flex justify-center md:mb-0">
+    <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
         <img
           src={TGLD}
           alt="Top Garden Logo"
